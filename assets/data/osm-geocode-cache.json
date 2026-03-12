@@ -1,0 +1,841 @@
+{
+  "generated_at": "2026-03-09 04:29:25",
+  "source": "nominatim",
+  "addresses": {
+    "JALAN CHERAS, JALAN KELIAN, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "JALAN CHERAS, JLN KELIAN, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KAW KASIPILLAY, JALAN PIPIT, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "MILLION GARDEN, JALAN PIPIT, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "OFF JALAN KELANG LAMA, JLN TASEK, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TAMAN MIHARJA, JALAN LOGAM, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TITIWANGSA, JLN TITIWANGSA, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JALAN JAMBU ARANG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JALAN JAMBU BERASA 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JALAN JAMBU BERASA 3, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JALAN JAMBU GAJUS 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JALAN JAMBU MERAH, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG SELATAN, JAMBU BERASA, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN BENTENG UTARA, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG DAMAI 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG INDAH 11 (JLN SEKOLAH), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG MURNI, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG MURNI 6, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG MURNI 13, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG PERMAI 8, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JALAN JINJANG UTAMA, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, JLN JINJANG INDAH 4 (EAST STREET 5), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB JINJANG UTARA, TANJUNG MALIM STREET, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN KAYA, JALAN CUMARASAMY, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "LUCKY GARDEN (JLN BANGSAR), JALAN TEMPINIS, Mukim Kuala Lumpur, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "LUCKY GARDEN (JLN BANGSAR), JALAN TEMPINIS 1, Mukim Kuala Lumpur, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "LUCKY GARDEN (JLN BANGSAR), JLN TEMPINIS KANAN, Mukim Kuala Lumpur, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "SALAK SOUTH LOW COST HOUSING, JLN 18/108, Mukim Kuala Lumpur, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "HAPPY GARDEN, JALAN JIRAN 8, Mukim Petaling, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "HOTSPRING GARDEN, JALAN AIR KUNING, Mukim Setapak, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "HOTSPRING GARDEN, LRG AIR PUTEH, Mukim Setapak, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KB AIR PANAS, LORONG AYER PUTEH, Mukim Setapak, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN SETAPAK (SETAPAK GARDEN), JALAN TIOMAN 4, Mukim Setapak, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN SETAPAK (SETAPAK GARDEN), JLN UMBUN 1, Mukim Setapak, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "JALAN SENTUL, JALAN KOVIL ULU, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KG PANDAN, JLN BELANGKAS, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KG PANDAN, JLN BELANGKAS 3, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "MILLION GARDEN, JALAN PUYOH, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "MILLION GARDEN, JLN PUYOH, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN GOLDEN, JLN KOLAM AIR 2, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN GOLDEN, JLN KOLAM AIR 4, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN KHET LOONG, JLN TANJUNG 12, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRA 7, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRA 1, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRA 2, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRA 7, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRA 8, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRA WATI 6, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN. WIRA 8, Kuala Lumpur Town Centre, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRA 1, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRA 4, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRA 5, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRA 7, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRAWATI 3, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JALAN WIRAWATI 4, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRAWATI 4, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "TMN MALURI, JLN WIRAWATI 5, Mukim Ampang, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "BAMBOO GARDEN, JALAN CENDERUH, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "BAMBOO GARDEN, JALAN TEROLAK 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "BAMBOO GARDEN, JALAN TEROLAK 4, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "BATU VIEW GARDEN, JALAN BATU HAMBAR, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "DESA BAKTI, JALAN 5/2B, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "DESA BAKTI, JALAN 7/2B, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "DESA BAKTI, JALAN 10/2B, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "IPOH ROAD GARDEN, JALAN CENDERUH 4, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "IPOH ROAD GARDEN, JALAN CHENDERUH 4, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "IPOH ROAD GARDEN, JLN CHENDERUH 4, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "IPOH ROAD GARDEN, JLN TEROLAK 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "IPOH ROAD GARDEN, JLN. CENDERUH, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API(27), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BIDARA 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN MERGASTUA, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN 70 (HELANG LAUT), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN 79 (JALAN BELABAS), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN 79 (LORONG BELABAS), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN 93 (JALAN CHIAK), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN 135 KELABU 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI 3, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI 4 (JALAN 24), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI 5 (JALAN 26), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI (JALAN 31), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI KANAN 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI KIRI, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI KIRI ( JALAN 29), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN ANTOI KIRI (JAALN 29), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API API, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API API 5, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API 1 (JALAN 15), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API 5, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API 5 (JLN 25), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API (JLN 27), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API KANAN, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API KIRI 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN API-API KIRI 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BAKAU (44), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BAKAU (JALAN 44), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BANGAU, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BEBARAU (JALAN 85), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BELABAS, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BELATUK (JALAN 71), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BELINJAU (JALAN 57), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BENDARUNG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BENDARUNG (79), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BENGKUDU (JLN 42), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BENGKULANG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BEREMBAN 63, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BEROMBONG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BIDARA 2 (JALAN 51), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BIDARA 3, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BIDARA (JLN 47), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN BUBUT (JALAN 77), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CAMAR (JLN 60), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CHIAK, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CHIAK PADANG (JALAN 72), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CHIAK RAYA (JALAN 89), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CHIAK TANAH (JALAN 91), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN CHIAK TANAH(JALAN 91), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG BELALANG 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG BELALANG 2 (JALAN 92), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG BELALANG 3 (JLN 109), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG JAMBU, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG LAUT (JALAN 70), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG LAUT(70), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG SIPUT 6, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN HELANG SIPUT 7, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN KELICAP (JALAN 58), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN LANG KEPALA PUTIH, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN LANG PERUT PUTIH 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN LANG PERUT PUTIH 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JALAN LANG PERUT PUTIH 7, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN 18 ( JLN ANTOI 1), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN 18 (JLN ANTOI 1), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN 31 ( JLN ANTOI ), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN 39 ( JLN ANTOI KANAN 4), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN ANTOI KANAN 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN ANTOI KANAN 1(33), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN ANTOI KANAN 4 (JALAN 39), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN API-API, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN API-API 5, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN API-API KIRI 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN ARANG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BEBEREK (JLN 81), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BELATUK, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BELATUK (JALAN 71), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BELINGGAI, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BENDARUNG, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN BENDERUNG (JLN 61), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN CHIAK RAYA, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN HELANG (JLN 66), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN HELANG JAMBU, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN HELANG LAUT (JLN 70), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN HELANG SIPUT 6 (JLN 103), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN HELANG SIPUT 8 (JLN 107), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG KELABU 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG KEPALA PUTIH, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH 2, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH 4, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH 8, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH 9, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG PERUT PUTIH ( JALAN 102 ), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN LANG TOMPOK (JLN 110), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN PELANDUK (JLN 71), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, JLN. 29 (JLN ANTOI KIRI), Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    },
+    "KEPONG BARU, LORONG BEBEREK 1, Mukim Batu, Kuala Lumpur, Malaysia": {
+      "lat": null,
+      "lng": null,
+      "display_name": ""
+    }
+  }
+}

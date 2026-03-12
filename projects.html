@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Projects | Pacome Trousselle</title>
+
+    <style>
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: Lato, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        line-height: 1.45;
+        color: #111;
+        background: #fff;
+        margin: 0;
+      }
+
+      .container { width: 100%; padding: 120px 0 60px; }
+      .row { display: flex; flex-wrap: wrap; }
+      .col-xs-12 { width: 100%; }
+
+      .col-md-8 { width: 100%; }
+      .col-md-offset-2 { margin-left: 0; }
+      @media (min-width: 992px) {
+        .col-md-offset-2 { margin-left: 16.6666667%; }
+        .col-md-8 { width: 66.6666667%; }
+      }
+
+      .topbar{
+        position:fixed;
+        top:0; left:0; right:0;
+        z-index:20;
+        padding:18px 28px;
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        pointer-events:none;
+      }
+      .nav{
+        display:flex;
+        gap:26px;
+        font-family:"Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size:14px;
+        letter-spacing:0.02em;
+        pointer-events:auto;
+      }
+      .nav a{
+        color:#b8b8b8;
+        text-decoration:none;
+        padding:4px 6px;
+        border-radius:6px;
+        transition: color .15s ease, transform .15s ease;
+      }
+      .nav a:hover{ color:#E34234; }
+      .nav a.active{ color:#E34234; }
+      @media (max-width: 460px){
+        .nav{ gap:16px; font-size:13px; flex-wrap:wrap; justify-content:center; }
+        .topbar{ justify-content:center; }
+      }
+
+      .spacer { height: 10px; }
+      .projects-container { margin-top: 18px; }
+
+      .col-sm-6 { width: 100%; }
+      @media (min-width: 768px) { .col-sm-6 { width: 50%; } }
+
+      .project { margin: 22px 0; }
+
+      .project a {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        text-decoration: none;
+        color: inherit;
+      }
+      .project a:hover .project-title { text-decoration: underline; }
+
+      .project-img { width: 100px; height: 100px; flex: 0 0 100px; }
+      .project-img img {
+        width: 100px; height: 100px;
+        display: block;
+        object-fit: cover;
+      }
+
+      .project-info { flex: 1 1 auto; }
+      .project-title {
+        font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 14px;
+        margin: 0 0 6px 0;
+        font-weight: 700;
+      }
+      .project-info p {
+        margin: 0;
+        font-size: 14px;
+        max-width: 52ch;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="bio.html">Bio</a>
+        <a href="cv.html">CV</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8">
+          <div class="projects-container">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="project">
+                  <a href="#">
+                    <div class="project-img">
+                      <img src="assets/its-rio-logo-300x300.png" width="100" height="100" alt="ITS Rio logo" />
+                    </div>
+                    <div class="project-info">
+                      <h4 class="project-title">Scientific Publication — Institute for Technology &amp; Society (ITS Rio)</h4>
+                      <p>
+                        Based on my work as a Visiting Researcher at ITS Rio, this article examines how Pix and digital payments
+                        reshape everyday practices and urban governance in Rio de Janeiro, highlighting inclusion–control trade-offs
+                        and socio-spatial asymmetries.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="project">
+                  <a href="#">
+                    <div class="project-img">
+                      <img src="assets/Gender-and-development-publication.png" width="100" height="100" alt="Anthropologie and developpement cover" />
+                    </div>
+                    <div class="project-info">
+                      <h4 class="project-title">Scientific Publication — Anthropologie &amp; developpement (APAD)</h4>
+                      <p>
+                        Submitted to the peer-reviewed bilingual journal Anthropologie &amp; developpement (APAD), this paper introduces
+                        “transactional inclusion” to analyze how instant payments reconfigure inequalities, digital dependence,
+                        traceability, and everyday negotiations of financial autonomy in Rio de Janeiro.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="project">
+                  <a href="#">
+                    <div class="project-img">
+                      <img src="assets/pexels-thisisengineering-3861969.jpg" width="100" height="100" alt="Digital project illustration" />
+                    </div>
+                    <div class="project-info">
+                      <h4 class="project-title">Digital Project — Malaysia Real-Estate Price Tracking Tool (Available soon)</h4>
+                      <p>
+                        Prototype platform to visualize and analyze real-estate transactions in Malaysia, combining data scraping,
+                        interactive mapping, and economic analysis to monitor market trends and explore digital transparency in property markets.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="project">
+                  <a href="#">
+                    <div class="project-img">
+                      <img src="assets/pexels-matreding-4397200.jpg" width="100" height="100" alt="PhD research illustration" />
+                    </div>
+                    <div class="project-info">
+                      <h4 class="project-title">PhD Research Project — Executive Summary</h4>
+                      <p>
+                        Intra-urban diagnosis of economic centralities and socio-spatial disparities using strictly aggregated electronic payment
+                        data to observe microfinancial flows in the Sao Paulo Metropolitan Region (RMSP), through a reproducible, LGPD-compliant protocol.
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

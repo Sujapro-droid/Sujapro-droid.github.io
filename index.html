@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <title>Pacôme Trousselle</title>
+  <meta name="description" content="Pacôme Trousselle — PhD research project" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Optionnel mais recommandé : le canvas en fond -->
+  <style>
+    #bg{
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; /* derrière le contenu */
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="bio.html">Bio</a>
+      <a href="cv.html">CV</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero" aria-label="Hero">
+      <div class="title">
+        <h1>PACÔME  TROUSSELLE</h1>
+        <div class="subtitle">PhD research project : City-Scale Transaction Flows and Urban Dynamics</div>
+      </div>
+
+      <aside class="links" aria-label="Links">
+        <a href="mailto:troussellepacome@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/pac%C3%B4me-trousselle-271456271/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="cv.html">CV</a>
+      </aside>
+    </section>
+  </main>
+
+  <!-- p5.js -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <script>
+    const targetCanvas = document.getElementById('bg');
+
+    new p5(function(p) {
+      let t = 0;
+      const d = 250;
+
+      p.setup = function() {
+        // Important: on dessine DANS ton canvas existant
+        p.createCanvas(p.windowWidth, p.windowHeight, undefined, targetCanvas);
+        p.stroke(p.color('#bc4749'), 120);
+        p.noFill();
+        p.frameRate(30);
+        // pour être sûr que ça apparaît
+        p.clear();
+      };
+
+      p.draw = function() {
+        p.background(255, 15);
+
+        p.beginShape();
+        for (let i = -1; i <= d; i++) {
+          const x = p.map(i, 0, d, 0, p.width);
+          const y =
+            p.map(p.noise(i * 0.01, t * 0.005), 0, 1, 0, p.height) +
+            p.map(i, 0, d, -p.height / 4, p.height / 2);
+
+          p.curveVertex(x, y);
+        }
+        p.endShape();
+
+        t += 1;
+      };
+
+      p.windowResized = function() {
+        p.resizeCanvas(p.windowWidth, p.windowHeight);
+      };
+    });
+  </script>
+</body>
+</html>

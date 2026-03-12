@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://*.tile.openstreetmap.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+  <title>Commercial Transactions - Listing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/transactions.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="logo" href="index.html" aria-label="Home">
+        <span class="logo-brand">brickz</span>
+        <span class="logo-tag">true property prices</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="transactions.html" class="active">Commercial</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="bio.html">Bio</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>Commercial Transactions</h1>
+        <p class="subtle" id="summaryText">Loading dataset...</p>
+      </div>
+      <div class="summary">
+        <div><span id="statP25Psm">--</span> 25th / m²</div>
+        <div><span id="statMedianPsm">--</span> Median / m²</div>
+        <div><span id="statP75Psm">--</span> 75th / m²</div>
+        <div><span id="statP25Price">--</span> 25th Price</div>
+        <div><span id="statMedianPrice">--</span> Median Price</div>
+        <div><span id="statP75Price">--</span> 75th Price</div>
+      </div>
+    </section>
+
+    <section class="map-wrap" aria-label="Maps">
+      <div class="map-toggle" role="tablist" aria-label="Map metric">
+        <button class="toggle-btn active" type="button" data-target="mapPriceCard">Median Price</button>
+        <button class="toggle-btn" type="button" data-target="mapPsmCard">Median Price / m²</button>
+        <button class="toggle-btn" type="button" data-target="mapCountCard">Transaction Volume</button>
+      </div>
+      <div class="map-card active" id="mapPriceCard">
+        <h2>Median Price (RM)</h2>
+        <div id="mapPrice" class="map"></div>
+      </div>
+      <div class="map-card" id="mapPsmCard">
+        <h2>Median Price / m² (RM)</h2>
+        <div id="mapPsm" class="map"></div>
+      </div>
+      <div class="map-card" id="mapCountCard">
+        <h2>Transaction Volume</h2>
+        <div id="mapCount" class="map"></div>
+      </div>
+    </section>
+
+    <section class="filters" aria-label="Filters">
+      <div class="filter-row">
+        <label class="filter">
+          <span>Search</span>
+          <input id="q" type="text" placeholder="Street, area, project" />
+        </label>
+        <label class="filter">
+          <span>State</span>
+          <select id="state">
+            <option value="">All States</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Area</span>
+          <select id="area">
+            <option value="">All Areas</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Type</span>
+          <select id="type">
+            <option value="">All Types</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Tenure</span>
+          <select id="tenure">
+            <option value="">All Tenure</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Price Range</span>
+          <select id="price">
+            <option value="">All Prices</option>
+            <option value="0-500000">Under RM 500k</option>
+            <option value="500000-1000000">RM 500k - RM 1m</option>
+            <option value="1000000-2000000">RM 1m - RM 2m</option>
+            <option value="2000000-99999999">Above RM 2m</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Period</span>
+          <select id="period">
+            <option value="">All Periods</option>
+          </select>
+        </label>
+      </div>
+      <div class="filter-actions">
+        <button id="applyBtn" class="btn primary" type="button">Filter</button>
+        <button id="clearBtn" class="btn" type="button">Clear</button>
+        <div class="result-count" id="resultCount"></div>
+      </div>
+    </section>
+
+    <section class="table-wrap" aria-label="Transaction Listing">
+      <table class="transactions">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Project / Street</th>
+            <th>Area</th>
+            <th>State</th>
+            <th>Type</th>
+            <th>Tenure</th>
+            <th class="num">Size (m²)</th>
+            <th class="num">Price (RM)</th>
+            <th class="num">Price / m²</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; 2026 Sample Transactions. All Rights Reserved.</small>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin="anonymous"></script>
+  <script src="assets/js/transactions.js"></script>
+</body>
+</html>
