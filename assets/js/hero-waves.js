@@ -1,14 +1,16 @@
 const targetCanvas = document.getElementById("bg");
 
-if (targetCanvas && window.p5) {
+if (window.p5) {
   new p5(function(p) {
     let t = 0;
     const d = 250;
 
     p.setup = function() {
+      if (targetCanvas) {
+        targetCanvas.remove();
+      }
       const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-      canvas.elt.id = "bg-canvas";
-      canvas.parent(targetCanvas.parentElement);
+      canvas.elt.id = "bg";
       p.stroke(p.color("#bc4749"), 120);
       p.noFill();
       p.frameRate(30);
