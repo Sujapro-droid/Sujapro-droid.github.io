@@ -1,5 +1,5 @@
 :root{
-  --accent:#E34234; /* cinnabar */
+  --accent:#8c1515;
   --text:#222;
   --muted: #b7b7b7;
   --bg:#ffffff;
@@ -38,7 +38,7 @@ a:hover{ text-decoration:none; }
   pointer-events:auto;
 }
 .nav a{
-  color:#b8b8b8;
+  color:#242424;
   transition: color .15s ease, transform .15s ease;
 }
 .nav a.active, .nav a:hover{ color: var(--accent); }
@@ -98,6 +98,26 @@ a:hover{ text-decoration:none; }
   line-height:1.9;
 }
 
+.home-aside{
+  justify-self:end;
+  display:grid;
+  gap:16px;
+  align-items:start;
+}
+
+.home-portrait{
+  margin:0;
+  width:220px;
+}
+
+.home-portrait img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 16px 36px rgba(0,0,0,0.16);
+}
+
 .links a{
   display:block;
   color: var(--accent);
@@ -149,7 +169,7 @@ a:hover{ text-decoration:none; }
   transition: transform .15s ease, border-color .15s ease;
 }
 .btn:hover{ transform: translateY(-1px); border-color: rgba(0,0,0,0.22); }
-.btn.primary{ border-color: rgba(227,66,52,0.35); }
+.btn.primary{ border-color: rgba(140,21,21,0.35); }
 
 .footerhint{
   margin-top:18px;
@@ -160,7 +180,9 @@ a:hover{ text-decoration:none; }
 /* responsive */
 @media (max-width: 860px){
   .hero{ grid-template-columns: 1fr; }
-  .links{ justify-self:center; text-align:center; margin-top:18px; }
+  .home-aside{ justify-self:center; }
+  .home-portrait{ width:min(240px, 60vw); }
+  .links{ justify-self:center; text-align:center; margin-top:0; }
   .title h1{ font-size:54px; }
   .topbar{ justify-content:center; }
 }

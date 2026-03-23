@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/lang-toggle.css" />
 
     <title>Projects | Pacome Trousselle</title>
 
@@ -54,14 +55,14 @@
         pointer-events:auto;
       }
       .nav a{
-        color:#b8b8b8;
+        color:#242424;
         text-decoration:none;
         padding:4px 6px;
         border-radius:6px;
         transition: color .15s ease, transform .15s ease;
       }
-      .nav a:hover{ color:#E34234; }
-      .nav a.active{ color:#E34234; }
+      .nav a:hover{ color:#8c1515; }
+      .nav a.active{ color:#8c1515; }
       @media (max-width: 460px){
         .nav{ gap:16px; font-size:13px; flex-wrap:wrap; justify-content:center; }
         .topbar{ justify-content:center; }
@@ -82,7 +83,7 @@
         text-decoration: none;
         color: inherit;
       }
-      .project a:hover .project-title { text-decoration: underline; }
+      .project a:hover .project-title { text-decoration: none; }
 
       .project-img { width: 100px; height: 100px; flex: 0 0 100px; }
       .project-img img {
@@ -106,15 +107,21 @@
     </style>
   </head>
 
-  <body>
+  <body data-lang="en" data-title-fr="Projets | Pacôme Trousselle" data-title-en="Projects | Pacome Trousselle">
     <header class="topbar">
-      <nav class="nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="bio.html">Bio</a>
-        <a href="cv.html">CV</a>
-        <a href="projects.html">Projects</a>
-      </nav>
+      <div class="topbar-inner">
+        <nav class="nav" aria-label="Primary" data-label-fr="Navigation principale" data-label-en="Primary">
+          <a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+          <a href="research.html"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+          <a href="bio.html"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+          <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+          <a href="projects.html" class="active"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+        </nav>
+        <div class="lang-toggle" aria-label="Language switcher" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+          <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        </div>
+      </div>
     </header>
 
     <div class="container">
@@ -130,11 +137,14 @@
                       <img src="./images/its-rio-logo-300x300.png" width="100" height="100" alt="ITS Rio logo" />
                     </div>
                     <div class="project-info">
-                      <h4 class="project-title">Scientific Publication — Institute for Technology &amp; Society (ITS Rio)</h4>
+                      <h4 class="project-title"><span class="lang-fr">Publication scientifique — Institute for Technology &amp; Society (ITS Rio)</span><span class="lang-en">Scientific Publication — Institute for Technology &amp; Society (ITS Rio)</span></h4>
                       <p>
-                        Based on my work as a Visiting Researcher at ITS Rio, this article examines how Pix and digital payments
+                        <span class="lang-fr">À partir de mon travail comme Visiting Researcher à ITS Rio, cet article analyse la manière dont Pix et les paiements numériques
+                        reconfigurent les pratiques ordinaires et la gouvernance urbaine à Rio de Janeiro, en mettant en évidence les arbitrages entre inclusion et contrôle
+                        ainsi que les asymétries socio-spatiales.</span>
+                        <span class="lang-en">Based on my work as a Visiting Researcher at ITS Rio, this article examines how Pix and digital payments
                         reshape everyday practices and urban governance in Rio de Janeiro, highlighting inclusion–control trade-offs
-                        and socio-spatial asymmetries.
+                        and socio-spatial asymmetries.</span>
                       </p>
                     </div>
                   </a>
@@ -148,11 +158,14 @@
                       <img src="./images/Gender-and-development-publication.png" width="100" height="100" alt="Anthropologie and developpement cover" />
                     </div>
                     <div class="project-info">
-                      <h4 class="project-title">Scientific Publication — Anthropologie &amp; developpement (APAD)</h4>
+                      <h4 class="project-title"><span class="lang-fr">Publication scientifique — Anthropologie &amp; developpement (APAD)</span><span class="lang-en">Scientific Publication — Anthropologie &amp; developpement (APAD)</span></h4>
                       <p>
-                        Submitted to the peer-reviewed bilingual journal Anthropologie &amp; developpement (APAD), this paper introduces
+                        <span class="lang-fr">Soumis à la revue bilingue à comité de lecture Anthropologie &amp; developpement (APAD), cet article introduit
+                        la notion d’« inclusion transactionnelle » pour analyser comment les paiements instantanés reconfigurent les inégalités, les dépendances numériques,
+                        la traçabilité et les négociations quotidiennes autour de l’autonomie financière à Rio de Janeiro.</span>
+                        <span class="lang-en">Submitted to the peer-reviewed bilingual journal Anthropologie &amp; developpement (APAD), this paper introduces
                         “transactional inclusion” to analyze how instant payments reconfigure inequalities, digital dependence,
-                        traceability, and everyday negotiations of financial autonomy in Rio de Janeiro.
+                        traceability, and everyday negotiations of financial autonomy in Rio de Janeiro.</span>
                       </p>
                     </div>
                   </a>
@@ -168,10 +181,12 @@
                       <img src="./images/pexels-thisisengineering-3861969.jpg" width="100" height="100" alt="Digital project illustration" />
                     </div>
                     <div class="project-info">
-                      <h4 class="project-title">Digital Project — Malaysia Real-Estate Price Tracking Tool (Available soon)</h4>
+                      <h4 class="project-title"><span class="lang-fr">Projet numérique — outil de suivi des prix immobiliers en Malaisie (bientôt disponible)</span><span class="lang-en">Digital Project — Malaysia Real-Estate Price Tracking Tool (Available soon)</span></h4>
                       <p>
-                        Prototype platform to visualize and analyze real-estate transactions in Malaysia, combining data scraping,
-                        interactive mapping, and economic analysis to monitor market trends and explore digital transparency in property markets.
+                        <span class="lang-fr">Prototype de plateforme permettant de visualiser et d’analyser les transactions immobilières en Malaisie, en combinant collecte automatisée de données,
+                        cartographie interactive et analyse économique pour suivre les tendances du marché et explorer les enjeux de transparence numérique des marchés fonciers.</span>
+                        <span class="lang-en">Prototype platform to visualize and analyze real-estate transactions in Malaysia, combining data scraping,
+                        interactive mapping, and economic analysis to monitor market trends and explore digital transparency in property markets.</span>
                       </p>
                     </div>
                   </a>
@@ -185,10 +200,12 @@
                       <img src="./images/pexels-matreding-4397200.jpg" width="100" height="100" alt="PhD research illustration" />
                     </div>
                     <div class="project-info">
-                      <h4 class="project-title">PhD Research Project — Executive Summary</h4>
+                      <h4 class="project-title"><span class="lang-fr">Projet de thèse — résumé exécutif</span><span class="lang-en">PhD Research Project — Executive Summary</span></h4>
                       <p>
-                        Intra-urban diagnosis of economic centralities and socio-spatial disparities using strictly aggregated electronic payment
-                        data to observe microfinancial flows in the Sao Paulo Metropolitan Region (RMSP), through a reproducible, LGPD-compliant protocol.
+                        <span class="lang-fr">Diagnostic intra-urbain des centralités économiques et des disparités socio-spatiales à partir de données de paiement électroniques strictement agrégées,
+                        afin d’observer les microflux financiers dans la région métropolitaine de São Paulo (RMSP), au moyen d’un protocole reproductible et conforme à la LGPD.</span>
+                        <span class="lang-en">Intra-urban diagnosis of economic centralities and socio-spatial disparities using strictly aggregated electronic payment
+                        data to observe microfinancial flows in the Sao Paulo Metropolitan Region (RMSP), through a reproducible, LGPD-compliant protocol.</span>
                       </p>
                     </div>
                   </a>
@@ -201,5 +218,6 @@
         </div>
       </div>
     </div>
+    <script src="assets/js/lang-toggle.js"></script>
   </body>
 </html>

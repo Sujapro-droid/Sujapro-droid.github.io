@@ -1,142 +1,1174 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
-  <title>Research — Pacôme Trousselle</title>
-  <meta name="description" content="Research — Pacôme Trousselle" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <title>Research | Pacôme Trousselle</title>
+  <meta name="description" content="Urban microfinancial flows, payment infrastructures, and intra-urban economic structure." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/bio-research.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/lang-toggle.css" />
+  <style>
+    :root {
+      --accent: #8c1515;
+      --ink: #111111;
+      --muted: #5a5a57;
+      --line: #d8d3cb;
+      --bg: #ffffff;
+      --soft: #f8f7f5;
+      --soft-2: #faf7f4;
+      --sans: "Lato", "Segoe UI", sans-serif;
+      --mono: "Roboto Mono", Consolas, monospace;
+      --content: 1180px;
+      --measure: 72ch;
+    }
+
+    * { box-sizing: border-box; }
+
+    .lang-en { display: none; }
+
+    body[data-lang="en"] .lang-fr { display: none; }
+    body[data-lang="en"] .lang-en { display: inline; }
+    body[data-lang="fr"] .lang-fr { display: inline; }
+    body[data-lang="fr"] .lang-en { display: none; }
+
+    body[data-lang="en"] .lang-en.block,
+    body[data-lang="fr"] .lang-fr.block {
+      display: block;
+    }
+
+    body[data-lang="en"] .lang-fr.block,
+    body[data-lang="fr"] .lang-en.block {
+      display: none;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--content), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 30;
+      padding: 18px 28px;
+      pointer-events: none;
+      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      backdrop-filter: blur(6px);
+    }
+
+    .topbar-kicker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 41;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 8px 20px rgba(255,255,255,0.92);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .topbar-kicker.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      pointer-events: auto;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lang-toggle button {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .lang-toggle button[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: #242424;
+      opacity: 1;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 132px 0 18px;
+      background: linear-gradient(180deg, #fff, #fcfbfa);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) 320px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #140f0f;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 5vw, 4.6rem);
+      max-width: 11ch;
+      margin-bottom: 16px;
+    }
+
+    .deck {
+      margin: 0 0 20px;
+      max-width: 54ch;
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
+      color: #2b2b2b;
+    }
+
+    .hero-meta {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .hero-meta strong {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-meta p {
+      margin: 0 0 14px;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .hero-overview {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .hero-overview-item {
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-overview-item strong {
+      display: inline;
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero-overview-item p {
+      display: inline;
+      margin: 0 0 0 8px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .hero-download {
+      display: inline-block;
+      margin-top: 6px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.88;
+    }
+
+    .hero-download:hover {
+      opacity: 1;
+    }
+
+    .scroll-cue {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .scroll-mouse {
+      width: 24px;
+      height: 38px;
+      border: 1.6px solid var(--accent);
+      border-radius: 14px;
+      position: relative;
+      opacity: 0.82;
+    }
+
+    .scroll-mouse::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      width: 4px;
+      height: 7px;
+      margin-left: -2px;
+      border-radius: 999px;
+      background: var(--accent);
+      animation: scrollDot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollDot {
+      0% { opacity: 0; transform: translateY(0); }
+      20% { opacity: 1; }
+      70% { opacity: 1; transform: translateY(12px); }
+      100% { opacity: 0; transform: translateY(16px); }
+    }
+
+    .main {
+      padding: 28px 0 64px;
+    }
+
+    .data-panel {
+      margin-top: 40px;
+      margin-bottom: 36px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .data-panel h2 {
+      font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .data-panel > p {
+      margin: 0 0 18px;
+      max-width: 82ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .data-grid {
+      display: block;
+    }
+
+    .data-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .data-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+      align-items: start;
+      grid-auto-rows: min-content;
+    }
+
+    .data-card {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .data-card span,
+    .data-box h3 {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .data-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+      font-family: var(--sans);
+      color: var(--ink);
+    }
+
+    .data-card p,
+    .data-box p,
+    .data-box li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-family: var(--mono);
+      line-height: 1.6;
+    }
+
+    .data-box {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      background: #fff;
+      align-self: start;
+    }
+
+    .data-box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .prose {
+      max-width: var(--measure);
+    }
+
+    .prose h2 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      margin: 48px 0 14px;
+    }
+
+    .prose p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+    }
+
+    .callout {
+      margin: 28px 0;
+      padding: 18px 22px;
+      border-left: 4px solid var(--accent);
+      background: #faf7f4;
+      font-size: 1.02rem;
+    }
+
+    .split-note {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .note {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: var(--soft-2);
+      border-left: 4px solid var(--accent);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .figures {
+      display: grid;
+      gap: 24px;
+      margin: 34px 0;
+    }
+
+    .figure-card {
+      padding: 16px 0 18px;
+      border-top: 3px solid var(--accent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .figure-frame {
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.04));
+    }
+
+    .figure-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+
+    .figure-source {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .figure-title {
+      margin: 10px 0 8px;
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .figure-caption {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .aside {
+      position: sticky;
+      top: 108px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .aside-card {
+      padding: 18px 18px 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .aside-card h3 {
+      margin-bottom: 12px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .aside-card p,
+    .aside-card li {
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    .aside-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .data-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .data-points div {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .data-points strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+      color: #2e2d29;
+    }
+
+    .guide-panel {
+      margin-top: 36px;
+      padding: 24px 26px 26px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fcfbfa, #f7f4f1);
+    }
+
+    .guide-panel h2 {
+      font-size: clamp(1.65rem, 2.5vw, 2.15rem);
+      margin-bottom: 10px;
+    }
+
+    .guide-panel p {
+      margin: 0 0 16px;
+      max-width: 82ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .download-link {
+      display: block;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .download-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .download-link.is-disabled {
+      opacity: 0.62;
+      cursor: default;
+    }
+
+    .download-link.is-disabled:hover {
+      border-color: var(--line);
+      transform: none;
+    }
+
+    .download-link strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .download-link span {
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .download-note {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 18px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .article-grid,
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aside {
+        position: static;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: calc(100% - 20px);
+      }
+
+      .masthead-inner {
+        align-items: flex-end;
+      }
+
+      .site-nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .download-grid,
+      .split-note,
+      .data-stack,
+      .data-details,
+      .data-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body>
+<body data-lang="en" data-title-fr="Recherche | Pacôme Trousselle" data-title-en="Research | Pacome Trousselle">
   <header class="topbar">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="bio.html">Bio</a>
-      <a href="cv.html">CV</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="topbar-kicker" aria-hidden="true">
+      <span class="lang-fr">Projet de recherche</span><span class="lang-en">Research project</span>
+    </div>
+    <div class="container topbar-inner">
+      <nav class="nav" aria-label="Navigation principale" data-label-fr="Navigation principale" data-label-en="Primary">
+        <a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+        <a href="research.html" class="active"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+        <a href="bio.html"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+        <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+        <a href="projects.html"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+      </nav>
+      <div class="lang-toggle" aria-label="Sélecteur de langue" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+        <button type="button" data-set-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
   </header>
 
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="section-label hero-kicker"><span class="lang-fr">Projet de recherche</span><span class="lang-en">Research project</span></p>
+          <h1><span class="lang-fr">Lire la ville à travers ses flux de paiement</span><span class="lang-en">Reading the city through its payment flows</span></h1>
+          <p class="deck">
+            <span class="lang-fr">Les villes sont souvent décrites par l’emploi, l’immobilier ou la mobilité. Ce projet propose une autre entrée :
+            la circulation monétaire ordinaire. En lisant les paiements comme des traces territoriales de la valeur en mouvement,
+            il devient possible d’observer où l’activité se concentre, comment elle se redistribue et quelles asymétries traversent l’espace urbain.</span>
+            <span class="lang-en">Cities are often described through jobs, real estate, or mobility. This project proposes another entry point:
+            ordinary monetary circulation. By reading payments as territorial traces of value in motion,
+            it becomes possible to observe where activity concentrates, how it redistributes itself, and which asymmetries run through urban space.</span>
+          </p>
+        </div>
+
+        <aside class="hero-meta">
+          <strong><span class="lang-fr">Vue d’ensemble du projet</span><span class="lang-en">Project overview</span></strong>
+          <p><span class="lang-fr">Une lecture concise de la question, des données, de la méthode et de l’apport scientifique du projet.</span><span class="lang-en">A concise reading of the project’s question, data, method, and scientific contribution.</span></p>
+          <div class="hero-overview">
+            <div class="hero-overview-item">
+              <strong><span class="lang-fr">Question</span><span class="lang-en">Question</span></strong>
+              <p><span class="lang-fr">Les flux de paiement révèlent centralités, dépendances et recompositions intra-urbaines.</span><span class="lang-en">Payment flows reveal centralities, dependencies, and intra-urban reconfigurations.</span></p>
+            </div>
+            <div class="hero-overview-item">
+              <strong><span class="lang-fr">Données</span><span class="lang-en">Data</span></strong>
+              <p><span class="lang-fr">Transactions agrégées, anonymisées et géocodées, lues comme traces territoriales.</span><span class="lang-en">Aggregated, anonymized, geocoded transactions read as territorial traces.</span></p>
+            </div>
+            <div class="hero-overview-item">
+              <strong><span class="lang-fr">Méthode</span><span class="lang-en">Method</span></strong>
+              <p><span class="lang-fr">Cartographie analytique, statistique spatiale, temporalités et analyse de flux lorsque possible.</span><span class="lang-en">Analytical mapping, spatial statistics, temporal analysis, and flow analysis when possible.</span></p>
+            </div>
+            <div class="hero-overview-item">
+              <strong><span class="lang-fr">Apport</span><span class="lang-en">Contribution</span></strong>
+              <p><span class="lang-fr">Une lecture rigoureuse de la structure économique urbaine, utile à la recherche et aux partenaires data.</span><span class="lang-en">A rigorous reading of urban economic structure, useful for research and data partners alike.</span></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <div class="scroll-mouse"></div>
+      </div>
+    </div>
+  </section>
+
   <main class="main">
-    <section class="page">
-      <h2>Research</h2>
-      <p class="muted">Urban economic geography, monetary circulation, and territorial indicators from aggregated payment data</p>
+    <div class="container">
+      <div class="article-grid">
+        <article class="prose">
+          <h2 id="why"><span class="lang-fr">Objet et ambition du projet</span><span class="lang-en">Project scope and ambition</span></h2>
+          <p>
+            <span class="lang-fr">Cette recherche s’inscrit d’abord en géographie économique urbaine. Elle propose d’analyser les infrastructures de paiement
+            numérique comme des infrastructures de circulation de la valeur, afin de comprendre comment des flux monétaires agrégés
+            révèlent, structurent ou renforcent des centralités économiques et certaines inégalités socio-spatiales à l’échelle intra-urbaine.</span>
+            <span class="lang-en">This research is rooted first in urban economic geography. It proposes to analyze digital payment infrastructures
+            as infrastructures for the circulation of value in order to understand how aggregated monetary flows
+            reveal, structure, or reinforce economic centralities and certain socio-spatial inequalities at the intra-urban scale.</span>
+          </p>
+          <p>
+            <span class="lang-fr">L’objet du projet n’est donc pas, d’abord, l’adoption des paiements numériques. Il porte plutôt sur leur appropriation post-déploiement :
+            la manière dont ces dispositifs s’insèrent dans des économies locales, avec des effets variables selon les groupes sociaux, les commerces
+            et les territoires. Les instant payments, les réseaux cartes, les wallets, les plateformes de paiement ou les dispositifs d’acquiring sont
+            ici traités comme des équipements socio-techniques qui filtrent l’accès aux circuits de dépense, les coûts de transaction et la visibilité économique.</span>
+            <span class="lang-en">The primary object of the project is therefore not the adoption of digital payments as such. It focuses instead on their post-deployment appropriation:
+            the way these devices become embedded in local economies, with variable effects across social groups, businesses,
+            and territories. Instant payments, card networks, wallets, payment platforms, or acquiring devices are treated here
+            as socio-technical equipment that filters access to spending circuits, transaction costs, and economic visibility.</span>
+          </p>
 
-      <div class="section-block">
-        <h5>Overview</h5>
-        <p>My research develops a reproducible, privacy-by-design framework to analyse city-scale monetary circulation using strictly aggregated electronic payment indicators (no individual-level data). The objective is to reveal economic centralities, territorial dependence gradients, and socio-spatial disparities embedded in everyday consumption and payment practices, and to relate these patterns to urban accessibility, planning layers, and real-estate valorisation dynamics.</p>
-        <p>This project is not primarily about “adoption” of digital payments. It focuses on post-deployment appropriation: how payment infrastructures (instant payments, card networks, wallets, acquiring, platform payments) become embedded in local economies and reshape where value circulates, who can participate, at what cost, and with what forms of visibility.</p>
+          <div class="callout">
+            <span class="lang-fr">Cette perspective permet de lire la ville non seulement à partir de l’emploi, du foncier ou des mobilités, mais aussi à partir de la circulation effective de la valeur dans la vie quotidienne.</span>
+            <span class="lang-en">This perspective makes it possible to read the city not only through jobs, land, or mobility, but also through the effective circulation of value in everyday life.</span>
+          </div>
+
+          <div class="figures" id="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure1_donut_effect.png" alt="Redistribution spatiale des dépenses entre centres et périphéries urbaines.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> Adapté de Ramani, A., Alcedo, J., &amp; Bloom, N. (2024). <em>How working from home reshapes cities</em>. <em>Proceedings of the National Academy of Sciences</em>, 121(45), e2408930121.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 1. Redistribution spatiale des dépenses entre centres et périphéries urbaines</span><span class="lang-en">Figure 1. Spatial redistribution of spending between urban cores and peripheries</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette figure illustre ce que les chercheurs qualifient de <em>Donut Effect</em>, c’est-à-dire le déplacement relatif de la croissance des
+                  dépenses des centres-villes vers les périphéries dans un ensemble de grandes villes. Elle montre que les flux
+                  de dépense constituent un révélateur des recompositions spatiales de l’activité économique urbaine.</span>
+                  <span class="lang-en">This figure illustrates what researchers call the <em>Donut Effect</em>, that is, the relative shift in spending growth
+                  from downtown areas toward peripheral areas across a set of large cities. It shows that spending flows
+                  can reveal the spatial reconfiguration of urban economic activity.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2><span class="lang-fr">Un projet à l’intersection de trois débats</span><span class="lang-en">A project at the intersection of three debates</span></h2>
+          <p>
+            <span class="lang-fr">Le projet se situe à l’intersection de trois débats qui sont souvent traités séparément, alors qu’ils gagnent ici à être articulés.
+            L’enjeu général est de comprendre comment les infrastructures de paiement, envisagées comme infrastructures de circulation et de mise en visibilité de la valeur,
+            permettent d’éclairer autrement la structure économique intra-urbaine.</span>
+            <span class="lang-en">The project stands at the intersection of three debates that are often treated separately, even though they become stronger when articulated together.
+            The broader goal is to understand how payment infrastructures, approached as infrastructures for circulation and the visualization of value,
+            shed a different light on intra-urban economic structure.</span>
+          </p>
+
+          <div class="split-note">
+            <div class="note">
+              <strong><span class="lang-fr">Lire les centralités par la circulation de la valeur</span><span class="lang-en">Reading centralities through the circulation of value</span></strong>
+              <span class="lang-fr">La ville est généralement lue à partir de l’emploi, du commerce, du foncier ou des mobilités. Le projet propose de compléter ces lectures par une entrée centrée sur les flux de dépense quotidiens.</span>
+              <span class="lang-en">Cities are usually read through employment, retail, land, or mobility. The project proposes to complement those readings with an approach centered on everyday spending flows.</span>
+            </div>
+            <div class="note">
+              <strong><span class="lang-fr">Inclusion, fluidité et nouvelles dépendances</span><span class="lang-en">Inclusion, fluidity, and new dependencies</span></strong>
+              <span class="lang-fr">Les paiements numériques peuvent réduire certaines frictions, mais aussi renforcer des asymétries de coût, de dépendance ou de captation de valeur selon les contextes territoriaux.</span>
+              <span class="lang-en">Digital payments can reduce certain frictions, but they can also reinforce asymmetries in cost, dependence, or value capture depending on territorial contexts.</span>
+            </div>
+            <div class="note">
+              <strong><span class="lang-fr">Paiements et visibilité économique</span><span class="lang-en">Payments and economic visibility</span></strong>
+              <span class="lang-fr">Les traces transactionnelles ne sont pas de simples données descriptives. Elles participent aussi à définir ce qui devient mesurable, visible ou interprétable dans la ville.</span>
+              <span class="lang-en">Transactional traces are not merely descriptive data. They also help define what becomes measurable, visible, or interpretable in the city.</span>
+            </div>
+          </div>
+
+          <div class="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure2_od_matrix.png" alt="Matrice origine-destination des flux de consommation intra-urbains par groupes de population.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> De las Obras-Loscertales, J., Garcia-Palomares, J., Ramiro-Farinas, D., Martin-Caro, M., &amp; Gutierrez, J. (2026). <em>Intra-urban consumption flows and sociospatial disparities: An analysis based on bank card transaction data</em>. <em>Environment and Planning B: Urban Analytics and City Science</em>.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 2. Matrice origine-destination des flux de consommation intra-urbains par groupes de population</span><span class="lang-en">Figure 2. Origin-destination matrix of intra-urban consumption flows by population group</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette figure montre que les données transactionnelles permettent de reconstruire des mobilités économiques relationnelles
+                  entre espaces de résidence et espaces de consommation. Elle illustre directement le potentiel d’une lecture
+                  de la ville par les flux plutôt que par les seuls volumes de dépense.</span>
+                  <span class="lang-en">This figure shows that transactional data can reconstruct relational economic mobilities
+                  between residential spaces and consumption spaces. It directly illustrates the potential of reading
+                  the city through flows rather than only through spending volumes.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2><span class="lang-fr">Mécanisme théorique central</span><span class="lang-en">Core theoretical mechanism</span></h2>
+          <p>
+            <span class="lang-fr">L’hypothèse générale du projet est que les infrastructures de paiement ne sont pas neutres dans la ville. Elles configurent l’accès aux circuits de dépense,
+            la fiabilité des échanges, les coûts de transaction, la visibilité économique et les capacités d’acceptation marchande. Ces propriétés influencent les modalités localisées
+            de participation économique, différemment selon les groupes sociaux, les types de commerce et les territoires.</span>
+            <span class="lang-en">The general hypothesis of the project is that payment infrastructures are not neutral within the city. They configure access to spending circuits,
+            the reliability of exchanges, transaction costs, economic visibility, and merchant acceptance capacities. These properties influence localized modes
+            of economic participation differently across social groups, business types, and territories.</span>
+          </p>
+          <p>
+            <span class="lang-fr">Ces effets différenciés deviennent observables dans des microflux monétaires urbains : des signaux agrégés de circulation de la valeur à fine maille spatiale et temporelle.
+            Le projet ne pose donc pas une causalité mécanique entre paiement numérique et transformation urbaine. Il propose plutôt un mécanisme de médiation spatiale :
+            les infrastructures de paiement reconfigurent certaines conditions locales de circulation de la valeur, et ces reconfigurations deviennent partiellement lisibles dans les flux agrégés.</span>
+            <span class="lang-en">These differentiated effects become observable in urban micro-monetary flows: aggregated signals of value circulation at a fine spatial and temporal scale.
+            The project therefore does not posit a mechanical causality between digital payment and urban transformation. It proposes instead a mechanism of spatial mediation:
+            payment infrastructures reconfigure certain local conditions of value circulation, and those reconfigurations become partly legible in aggregated flows.</span>
+          </p>
+
+          <div class="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure3_centrality_groups.png" alt="Centralité économique selon les groupes de population.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> De las Obras-Loscertales, J., Garcia-Palomares, J., Ramiro-Farinas, D., Martin-Caro, M., &amp; Gutierrez, J. (2026). <em>Intra-urban consumption flows and sociospatial disparities: An analysis based on bank card transaction data</em>. <em>Environment and Planning B: Urban Analytics and City Science</em>.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 3. Centralité économique selon les groupes de population</span><span class="lang-en">Figure 3. Economic centrality by population group</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette figure est directement alignée avec le coeur du projet puisqu’elle met en relation centralités économiques et disparités sociospatiales.
+                  Elle permet d’illustrer de manière visuelle que les structures de consommation et les pôles d’attraction ne sont pas
+                  distribués uniformément entre groupes sociaux.</span>
+                  <span class="lang-en">This figure is directly aligned with the core of the project because it links economic centralities with socio-spatial disparities.
+                  It visually shows that consumption structures and poles of attraction are not
+                  distributed uniformly across social groups.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2><span class="lang-fr">Ce que le projet apporte de nouveau</span><span class="lang-en">What the project brings that is new</span></h2>
+          <p>
+            <span class="lang-fr">La thèse propose une lecture intégrée des paiements numériques comme infrastructures urbaines de circulation de la valeur.
+            Elle rapproche ainsi géographie économique urbaine, géographies monétaires et études des infrastructures autour d’un même objet :
+            la manière dont la ville est structurée par des circuits ordinaires de dépense.</span>
+            <span class="lang-en">The dissertation proposes an integrated reading of digital payments as urban infrastructures for the circulation of value.
+            It thereby brings urban economic geography, monetary geographies, and infrastructure studies together around a shared object:
+            the way the city is structured by ordinary circuits of spending.</span>
+          </p>
+          <p>
+            <span class="lang-fr">Sur le plan analytique, le projet montre que des flux monétaires agrégés peuvent servir à identifier des centralités économiques,
+            des asymétries d’attraction, des spécialisations fonctionnelles et certaines formes de dépendance territoriale qui ne sont pas pleinement visibles
+            à travers les seuls indicateurs d’emploi, de transport ou de foncier.</span>
+            <span class="lang-en">At the analytical level, the project shows that aggregated monetary flows can be used to identify economic centralities,
+            asymmetries of attraction, functional specializations, and certain forms of territorial dependence that are not fully visible
+            through employment, transport, or land indicators alone.</span>
+          </p>
+
+          <div class="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure4_income_bias.png" alt="Répartition de l’activité entre fréquentation, transactions et dépenses par déciles de revenu.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> Klopack, E., &amp; Luco, F. (2025). <em>Measuring local consumption with payment cards and cell phone pings</em>, figure 1, “Share of foot traffic, transactions, and spending by income decile”.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 4. Répartition de l’activité entre fréquentation, transactions et dépenses par déciles de revenu</span><span class="lang-en">Figure 4. Distribution of activity across visits, transactions, and spending by income decile</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette figure montre que les données de paiement ne capturent pas exactement les mêmes réalités que les données de mobilité
+                  ou de fréquentation et qu’elles présentent des biais sociaux potentiels. Elle est importante pour justifier
+                  une lecture prudente et méthodologiquement réflexive des données transactionnelles.</span>
+                  <span class="lang-en">This figure shows that payment data do not capture exactly the same realities as mobility
+                  or footfall data, and that they carry potential social biases. It is important because it supports
+                  a cautious and methodologically reflexive reading of transactional data.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2><span class="lang-fr">Concepts centraux</span><span class="lang-en">Core concepts</span></h2>
+          <p>
+            <span class="lang-fr">Les microflux financiers urbains désignent ici des signaux agrégés de circulation de la valeur à petite maille spatiale et temporelle.
+            Ils permettent d’observer l’intensité économique des lieux, les rythmes de dépense, les polarités marchandes et, lorsque les données le permettent,
+            les relations entre espaces de résidence et espaces de consommation.</span>
+            <span class="lang-en">Urban microfinancial flows refer here to aggregated signals of value circulation at a fine spatial and temporal scale.
+            They make it possible to observe the economic intensity of places, spending rhythms, commercial polarities and, when the data allow it,
+            the relationships between residential spaces and consumption spaces.</span>
+          </p>
+          <p>
+            <span class="lang-fr">Les infrastructures de paiement désignent l’ensemble des dispositifs techniques, organisationnels et réglementaires qui rendent possible le transfert de valeur :
+            rails, interfaces, terminaux, réseaux d’acceptation, intermédiaires, normes de conformité et conditions d’accès. Le projet les traite comme des dispositifs qui structurent les échanges,
+            plutôt que comme un simple support neutre.</span>
+            <span class="lang-en">Payment infrastructures designate the set of technical, organizational, and regulatory devices that make value transfer possible:
+            rails, interfaces, terminals, acceptance networks, intermediaries, compliance standards, and access conditions. The project treats them as devices that structure exchanges,
+            rather than as a neutral support layer.</span>
+          </p>
+
+          <div class="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure5_qr_rio.jpg" alt="Dispositif de paiement dans un commerce à Rio de Janeiro.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> Trousselle, P. (2025). <em>Photographie de terrain prise lors de la recherche à Rio de Janeiro</em> [Photographie]. Archives personnelles de l’auteur.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 5. Dispositif de paiement dans un commerce à Rio de Janeiro</span><span class="lang-en">Figure 5. Payment setup in a retail shop in Rio de Janeiro</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette photographie rend visible la multiplication et la coexistence d’infrastructures matérielles de paiement au sein d’un même espace marchand.
+                  Elle met en évidence un agencement technique dense combinant terminal carte, interface interactive, QR codes,
+                  dispositifs de captation visuelle et couche applicative supplémentaire liée au paiement par reconnaissance faciale.
+                  L’image donne ainsi à voir l’hybridation des dispositifs techniques, informationnels et commerciaux qui encadrent l’acte de paiement.</span>
+                  <span class="lang-en">This photograph makes visible the multiplication and coexistence of material payment infrastructures within a single retail space.
+                  It highlights a dense technical arrangement combining a card terminal, an interactive interface, QR codes,
+                  visual capture devices, and an additional application layer linked to facial-recognition payment.
+                  The image thus shows the hybridization of technical, informational, and commercial devices framing the act of payment.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <h2><span class="lang-fr">Stratégie empirique et faisabilité</span><span class="lang-en">Empirical strategy and feasibility</span></h2>
+          <p>
+            <span class="lang-fr">L’enquête est pensée d’emblée à l’échelle intra-urbaine. Elle vise à comparer des espaces contrastés au sein d’une même ville
+            ou, selon les possibilités d’accès aux données, entre plusieurs terrains comparables : centralités établies, espaces intermédiaires,
+            polarités secondaires, périphéries et espaces populaires plus faiblement intégrés aux circuits dominants de dépense.</span>
+            <span class="lang-en">The investigation is designed from the outset at the intra-urban scale. It aims to compare contrasted spaces within a single city
+            or, depending on data access, across several comparable field sites: established centralities, intermediate spaces,
+            secondary poles, peripheries, and popular areas less strongly integrated into dominant circuits of spending.</span>
+          </p>
+          <p>
+            <span class="lang-fr">Les données principales seront des données transactionnelles agrégées issues, selon les possibilités d’accès, de réseaux cartes,
+            de paiements instantanés, de wallets ou de plateformes. Lorsque des matrices origine-destination sont disponibles, elles permettent
+            une lecture relationnelle des flux. En leur absence, l’analyse repose sur des indicateurs de lieu de dépense, de fréquence transactionnelle
+            et, si possible, de volume, mis en relation avec des données urbaines complémentaires. La faisabilité du projet repose ainsi sur une architecture empirique progressive et adaptable.</span>
+            <span class="lang-en">The main data will be aggregated transactional data drawn, depending on access possibilities, from card networks,
+            instant payments, wallets, or platforms. When origin-destination matrices are available, they enable
+            a relational reading of flows. In their absence, analysis relies on indicators of spending location, transaction frequency,
+            and, when possible, volume, linked to complementary urban data. The feasibility of the project therefore rests on a progressive and adaptable empirical architecture.</span>
+          </p>
+
+          <div class="figures">
+            <figure class="figure-card">
+              <div class="figure-frame">
+                <img src="assets/img/research/figure6_cluster_groups.jpg" alt="Environnements de dépense dans la ville de Madrid et volume total des dépenses.">
+              </div>
+              <figcaption>
+                <span class="figure-source"><em>Source.</em> Adapté de Carpio-Pinedo, J., Romanillos, G., Aparicio, D., Hernandez Martin-Caro, M. S., Garcia-Palomares, J. C., &amp; Gutierrez, J. (2022). <em>Towards a new urban geography of expenditure: Using bank card transactions data to analyze multi-sector spatiotemporal distributions</em>. <em>Cities</em>, 131, 103894.</span>
+                <p class="figure-title"><span class="lang-fr">Figure 6. Environnements de dépense dans la ville de Madrid et volume total des dépenses</span><span class="lang-en">Figure 6. Spending environments in Madrid and total expenditure volume</span></p>
+                <p class="figure-caption">
+                  <span class="lang-fr">Cette figure montre que les centralités économiques peuvent être différenciées à la fois par l’intensité des dépenses et par leur
+                  spécialisation sectorielle. Elle renforce l’idée que la structure spatiale de l’activité économique urbaine
+                  combine concentration, hiérarchisation et diversité fonctionnelle.</span>
+                  <span class="lang-en">This figure shows that economic centralities can be differentiated both by spending intensity and by their
+                  sectoral specialization. It reinforces the idea that the spatial structure of urban economic activity
+                  combines concentration, hierarchy, and functional diversity.</span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <section class="data-panel" id="data">
+            <h2><span class="lang-fr">Quel type de données suffit déjà pour commencer</span><span class="lang-en">What kind of data is already enough to begin</span></h2>
+            <p>
+              <span class="lang-fr">À partir des documents scientifiques et du dossier Data Provider, ce bloc résume le socle empirique du projet : ce qu’un jeu de données agrégé permet déjà de voir, et avec quelles méthodes.</span>
+              <span class="lang-en">Drawing on the academic documents and the Data Provider dossier, this block summarizes the empirical core of the project: what an aggregated dataset already makes visible, and through which methods.</span>
+            </p>
+            <div class="data-grid">
+              <div class="data-stack">
+                <article class="data-card">
+                  <span><span class="lang-fr">Niveau 1</span><span class="lang-en">Level 1</span></span>
+                  <strong><span class="lang-fr">Socle minimal</span><span class="lang-en">Minimal foundation</span></strong>
+                  <p><span class="lang-fr">Zone, période, volume agrégé et montant agrégé : assez pour cartographier intensités et premières centralités.</span><span class="lang-en">Zone, period, aggregated volume, and aggregated amount: enough to map intensities and first-order centralities.</span></p>
+                </article>
+                <article class="data-card">
+                  <span><span class="lang-fr">Niveau 2</span><span class="lang-en">Level 2</span></span>
+                  <strong><span class="lang-fr">Niveau utile</span><span class="lang-en">Useful level</span></strong>
+                  <p><span class="lang-fr">Catégories agrégées, série plus longue, granularité plus fine : typologies territoriales et lectures sectorielles plus robustes.</span><span class="lang-en">Aggregated categories, longer series, finer granularity: stronger territorial typologies and sectoral readings.</span></p>
+                </article>
+                <article class="data-card">
+                  <span><span class="lang-fr">Niveau 3</span><span class="lang-en">Level 3</span></span>
+                  <strong><span class="lang-fr">Niveau enrichi</span><span class="lang-en">Enriched level</span></strong>
+                  <p><span class="lang-fr">Canaux, moyens de paiement, points d’acceptation : comparaisons plus fines des structures de dépense et des rythmes.</span><span class="lang-en">Channels, payment means, acceptance points: finer comparisons of spending structures and rhythms.</span></p>
+                </article>
+                <article class="data-card">
+                  <span><span class="lang-fr">Niveau 4</span><span class="lang-en">Level 4</span></span>
+                  <strong><span class="lang-fr">Niveau relationnel</span><span class="lang-en">Relational level</span></strong>
+                  <p><span class="lang-fr">Flux agrégés entre zones : attractivité inter-spatiale, dépendances territoriales et aires fonctionnelles de consommation.</span><span class="lang-en">Aggregated flows between zones: inter-spatial attractiveness, territorial dependencies, and functional consumption areas.</span></p>
+                </article>
+              </div>
+              <div class="data-details">
+                <section class="data-box">
+                  <h3><span class="lang-fr">Variables et méthodes</span><span class="lang-en">Variables and methods</span></h3>
+                  <ul>
+                    <li><span class="lang-fr">Information géocodée ou agrégée par zone, profondeur temporelle, volume et montant agrégés</span><span class="lang-en">Geocoded or zone-aggregated information, temporal depth, aggregated volume, and amount</span></li>
+                    <li><span class="lang-fr">Cartographie analytique, statistique spatiale, comparaisons multi-échelles, clustering et analyses temporelles</span><span class="lang-en">Analytical mapping, spatial statistics, multi-scale comparisons, clustering, and temporal analysis</span></li>
+                    <li><span class="lang-fr">Analyse de flux lorsque des relations entre zones existent, croisée avec des couches urbaines complémentaires</span><span class="lang-en">Flow analysis whenever inter-zone relationships exist, combined with complementary urban layers</span></li>
+                  </ul>
+                </section>
+                <section class="data-box">
+                  <h3><span class="lang-fr">Principe de prudence</span><span class="lang-en">Principle of caution</span></h3>
+                  <p><span class="lang-fr">Le bon point de départ n’est pas le jeu de données le plus riche, mais le plus crédible, le mieux documenté et le plus compatible avec les contraintes d’accès.</span><span class="lang-en">The right starting point is not the richest dataset, but the most credible, best documented, and most compatible with access constraints.</span></p>
+                </section>
+              </div>
+            </div>
+          </section>
+
+          <h2><span class="lang-fr">Pour aller plus loin</span><span class="lang-en">To go further</span></h2>
+          <p>
+            <span class="lang-fr">Si vous souhaitez aller plus loin, vous pouvez télécharger ci-dessous une version plus longue du projet, en français ou en anglais, selon le niveau de détail et le cadrage recherchés.</span>
+            <span class="lang-en">If you would like to go further, you can download below a longer version of the project, in French or in English, depending on the level of detail and framing you need.</span>
+          </p>
+          <p>
+            <a class="hero-download" href="#documents"><span class="lang-fr">Accéder aux documents détaillés</span><span class="lang-en">Access the detailed documents</span></a>
+          </p>
+        </article>
+
+        <aside class="aside">
+          <section class="aside-card">
+            <h3><span class="lang-fr">Points clés</span><span class="lang-en">Key points</span></h3>
+            <p>
+              <span class="lang-fr">Le coeur du projet est simple : analyser la structure économique intra-urbaine à partir de la circulation de la valeur, et non seulement à partir des stocks, des emplois ou du foncier.</span>
+              <span class="lang-en">The core of the project is simple: analyze intra-urban economic structure through the circulation of value, and not only through stocks, jobs, or land.</span>
+            </p>
+            <div class="data-points">
+              <div>
+                <strong><span class="lang-fr">Lire des centralités</span><span class="lang-en">Read centralities</span></strong>
+                <span class="lang-fr">Voir où l’activité se concentre réellement.</span>
+                <span class="lang-en">See where activity really concentrates.</span>
+              </div>
+              <div>
+                <strong><span class="lang-fr">Comparer des territoires</span><span class="lang-en">Compare territories</span></strong>
+                <span class="lang-fr">Centres, périphéries, polarités secondaires et marges.</span>
+                <span class="lang-en">Cores, peripheries, secondary polarities, and margins.</span>
+              </div>
+              <div>
+                <strong><span class="lang-fr">Suivre des recompositions</span><span class="lang-en">Track reconfigurations</span></strong>
+                <span class="lang-fr">Identifier des rythmes, ruptures et déplacements.</span>
+                <span class="lang-en">Identify rhythms, breaks, and shifts.</span>
+              </div>
+              <div>
+                <strong><span class="lang-fr">Documenter des flux</span><span class="lang-en">Document flows</span></strong>
+                <span class="lang-fr">Comprendre les dépendances et les relations entre zones.</span>
+                <span class="lang-en">Understand dependencies and relationships between zones.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="aside-card">
+            <h3><span class="lang-fr">Pour un premier échange</span><span class="lang-en">For a first conversation</span></h3>
+            <p>
+              <span class="lang-fr">Le bon point de départ n’est pas forcément le jeu de données le plus riche, mais le plus crédible et le mieux documenté.</span>
+              <span class="lang-en">The right starting point is not necessarily the richest dataset, but the most credible and best documented one.</span>
+            </p>
+            <ul>
+              <li><span class="lang-fr">La ou les géographies pertinentes.</span><span class="lang-en">The relevant geography or geographies.</span></li>
+              <li><span class="lang-fr">La période disponible.</span><span class="lang-en">The period available.</span></li>
+              <li><span class="lang-fr">Le niveau d’agrégation compatible.</span><span class="lang-en">The compatible aggregation level.</span></li>
+              <li><span class="lang-fr">Les variables déjà accessibles.</span><span class="lang-en">The variables already accessible.</span></li>
+              <li><span class="lang-fr">Les règles de confidentialité ou de diffusion.</span><span class="lang-en">The confidentiality or dissemination rules.</span></li>
+            </ul>
+          </section>
+        </aside>
       </div>
 
-      <hr class="section-break" />
+      <section class="guide-panel" id="documents">
+        <p class="section-label"><span class="lang-fr">Pour aller plus loin</span><span class="lang-en">Further reading</span></p>
+        <h2><span class="lang-fr">Cette page donne une lecture synthétique du projet.</span><span class="lang-en">This page provides a concise reading of the project.</span></h2>
+        <p>
+          <span class="lang-fr">Pour consulter la version longue, télécharger directement les documents complets ci-dessous.
+          Ils reprennent le projet dans un format plus détaillé, selon la langue et le cadrage retenus.</span>
+          <span class="lang-en">For the long-form version, download the full documents below.
+          They restate the project in greater detail, depending on the language and framing selected.</span>
+        </p>
 
-      <div class="section-block">
-        <h5>Scientific debate and positioning</h5>
-        <p>The project sits at the intersection of three debates that are often treated separately:</p>
-        <p>Financial inclusion vs. new forms of extraction and dependency. Across the digital finance literature, a persistent tension runs through the evidence: on the one hand, digital payments are associated with lower frictions, expanded economic opportunities, and efficiency gains ("inclusion", smoother transactions, formalisation). On the other hand, they are interpreted as intensifying financialisation and value capture, through fees, dependence on intermediaries, technical lock-ins, and datafication (turning economic activity into exploitable traces). The project aims to identify the mechanisms and socio-spatial conditions that shift a territory toward one scenario or the other.</p>
-        <p>Payments and money as socio-technical infrastructure. Payments are treated as infrastructure (standards, rails, compliance devices, acceptance networks, interfaces): largely invisible when they work, yet politically decisive as soon as they filter access, generate cost asymmetries, or impose specific formats of visibility. This perspective (Science and Technology Studies (STS) / infrastructure studies) moves beyond a “neutral” view of payments: technical design, organisational arrangements, and regulation co-produce economic and territorial outcomes.</p>
-        <p>Governing the city, and, ultimately, populations, through metrics and transaction traces. Transaction data now feed a growing set of steering instruments (dashboards, scoring, commercial targeting, urban diagnostics). A critical debate concerns the performativity of indicators: measuring also means producing categories, thresholds, and hierarchies of what counts. The project contributes to this discussion on algorithmic governance, the risks of over-interpretation (coverage bias, Modifiable Areal Unit Problem (MAUP)), and the conditions under which evidence can be both auditable and ethically governable.</p>
-      </div>
+        <div class="download-grid">
+          <a class="download-link" href="assets/pdf/research/scientifiques_fr.pdf" download>
+            <span><span class="lang-fr">Téléchargement</span><span class="lang-en">Download</span></span>
+            <strong><span class="lang-fr">Proposition de recherche doctorale — français</span><span class="lang-en">Doctoral research proposal — French</span></strong>
+            <span class="lang-fr block">Version longue du projet pour une lecture académique en français.</span>
+            <span class="lang-en block">Long-form version of the project for an academic reading in French.</span>
+          </a>
+          <div class="download-link is-disabled" aria-label="English doctoral proposal coming soon">
+            <span><span class="lang-fr">Téléchargement</span><span class="lang-en">Download</span></span>
+            <strong>PhD Project Urban Microfinancial Flows — English</strong>
+            <span class="lang-fr block">Traduction anglaise en préparation.</span>
+            <span class="lang-en block">English translation in progress.</span>
+          </div>
+          <a class="download-link" href="assets/pdf/research/partenaires_fr.pdf" download>
+            <span><span class="lang-fr">Téléchargement</span><span class="lang-en">Download</span></span>
+            <strong><span class="lang-fr">Projet de recherche et proposition de collaboration — français</span><span class="lang-en">Research project and collaboration proposal — French</span></strong>
+            <span class="lang-fr block">Document orienté collaboration avec acteurs data, paiements et géodata.</span>
+            <span class="lang-en block">Collaboration-oriented document for data, payments, and geodata stakeholders.</span>
+          </a>
+          <div class="download-link is-disabled" aria-label="English partner dossier coming soon">
+            <span><span class="lang-fr">Téléchargement</span><span class="lang-en">Download</span></span>
+            <strong>Metropolitan Payment Data Intelligence — English</strong>
+            <span class="lang-fr block">Traduction anglaise en préparation.</span>
+            <span class="lang-en block">English translation in progress.</span>
+          </div>
+        </div>
 
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Core concepts</h5>
-        <p>Urban monetary microflows. Aggregated, fine-grained signals of value circulation (where spending occurs; where consumers originate; when and in what sectors), treated as a lens on the city’s everyday economy.</p>
-        <p>Payment infrastructures. Socio-technical systems (networks, terminals, wallets, application programming interfaces (APIs), rules) that condition transaction costs, access, reliability, and traceability.</p>
-        <p>Territorial dependence gradients. Spatial patterns of reliance on specific centralities, corridors, or commercial ecosystems, capturing vulnerability/lock-in for peripheral areas.</p>
-        <p>Socio-spatial disparity in economic participation. Unequal capabilities to pay/receive, unequal exposure to costs and compliance filters, unequal visibility and eligibility (e.g., for credit, offers, platform access).</p>
-        <p>Centrality and functionality of consumption spaces. Centralities defined not only by volume but by connectivity/attractiveness; functional areas detected via network modularity/community structures.</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Disciplines mobilised</h5>
-        <p>Urban & economic geography: centralities, networks, territorial inequalities, urban restructuring.</p>
-        <p>Geographies of finance / monetary geographies: spatial organisation of money, intermediation, and financial power.</p>
-        <p>Urban political economy: financialisation, rent dynamics, platform power, regulation.</p>
-        <p>Science and Technology Studies (STS) / infrastructure studies: standards, socio-technical systems, “black boxes”, governance through design.</p>
-        <p>Urban data science & spatial methods: spatial statistics, network analysis, robustness, reproducibility, interpretability.</p>
-        <p>Data governance (applied): disclosure control, privacy-by-design, and auditable pipelines.</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Literature gaps the project addresses</h5>
-        <p>Beyond adoption: much of the literature measures access/adoption; fewer studies explain how payment infrastructures reshape intra-urban economic organisation after deployment, especially in working-class and noncentral areas.</p>
-        <p>Territory as explanation (not illustration): consumption and payment research often lacks a strong territorial theory of why effects differ across centralities, margins, and mobility constraints.</p>
-        <p>Infrastructure as mechanism: payment rails and compliance architectures are frequently treated as background; this project treats them as causal mechanisms producing spatial asymmetries.</p>
-        <p>Reproducible, privacy-safe territorial indicators: research is often polarised between open macro statistics and inaccessible microdata. There is a missing middle: auditable aggregated indicators that remain analytically powerful.</p>
-        <p>Feedback loop: measurement → decision (bank / payment service provider (PSP) / city) → reconfiguration of flows is under-theorised; the project explicitly models these feedbacks.</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Research questions</h5>
-        <p>How is intra-urban monetary circulation spatially structured, and which consumption centralities emerge from payment flows that are not fully captured by employment or transport networks?</p>
-        <p>What asymmetries in access, dependence, and territorial vulnerability become visible in peripheral and working-class areas?</p>
-        <p>How do flow signatures relate to valorisation processes and the production of urban space over time (where data allow longitudinal analysis)?</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Methods and outputs</h5>
-        <p>Methods. Spatial autocorrelation (Moran’s I; Local Indicators of Spatial Association (LISA)), clustering, polarization measures, and multi-scale robustness tests (MAUP) are combined with temporal validation and spatial block cross-validation. Where origin–destination (Origin–Destination (OD)) information is available, OD network analysis supports centrality and functional-area detection; where not available, the approach relies on place-of-expenditure indicators enriched by urban context.</p>
-        <p>Outputs. Multi-scale maps of consumption centralities; territorial typologies; indicators of resilience/diversity/volatility of local economic activity; and documented protocols enabling replication and comparison across neighbourhoods (and, where feasible, across cities).</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>Data strategy and governance (privacy-by-design)</h5>
-        <p>The project follows a graduated access strategy:</p>
-        <p>Aggregated OD matrices (preferred) when available under strict governance.</p>
-        <p>If OD is unavailable: place-of-expenditure analyses using aggregated transaction indicators.</p>
-        <p>Systematic enrichment with open/administrative urban datasets where permissible (e.g., General Transit Feed Specification (GTFS) transport supply, zoning/planning layers, accessibility, socio-demographics, municipal property transactions when open).</p>
-        <p>Protection and auditability are built into the pipeline: minimisation, disclosure thresholds, top-coding, suppression rules, joinability controls, and strict separation between secure analysis and publishable outputs. The goal is to make results scientifically credible and institutionally acceptable for partners holding sensitive data.</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block">
-        <h5>What the project brings that is new</h5>
-        <p>Theoretical contribution: an integrated view of digital payments as urban infrastructures of value circulation, linking territory, infrastructure governance, and socio-spatial inequality.</p>
-        <p>Methodological contribution: a transferable and reproducible framework to extract territorial indicators from aggregated monetary flows under privacy-by-design constraints.</p>
-        <p>Empirical contribution: fine-grained evidence on consumption centralities, dependence gradients, and disparities, especially relevant for peripheral and working-class areas.</p>
-        <p>Applied contribution (bounded): a policy-relevant toolkit that can support public authorities, financial institutions, and international organisations, while explicitly documenting limitations and biases.</p>
-      </div>
-
-      <hr class="section-break" />
-
-      <div class="section-block ref-block">
-        <h5>Selected references (foundational and recent)</h5>
-        <p>De las Obras-Loscertales, J., García-Palomares, J. C., Ramiro-Fariñas, D., Hernández Martín-Caro, M. S., & Gutiérrez, J. (2026). Intra-urban consumption flows and sociospatial disparities: An analysis based on bank card transaction data. Environment and Planning B: Urban Analytics and City Science. https://doi.org/10.1177/23998083261420309</p>
-        <p>Carpio-Pinedo, J., Romanillos, G., Aparicio, D., Hernández Martín-Caro, M. S., García-Palomares, J. C., & Gutiérrez, J. (2022). Towards a new urban geography of expenditure: Using bank card transactions data to analyze multi-sector spatiotemporal distributions. Cities, 131, 103894. https://doi.org/10.1016/j.cities.2022.103894</p>
-        <p>Aparicio, D., Hernández Martín-Caro, M. S., García-Palomares, J. C., & Gutiérrez, J. (2022). Exploring the spatial patterns of visitor expenditure in cities using bank card transactions data. Current Issues in Tourism, 25(17), 2770-2788. https://doi.org/10.1080/13683500.2021.1991898</p>
-        <p>Langley, P., & Leyshon, A. (2021). The platform political economy of FinTech: Reintermediation, consolidation and capitalisation. New Political Economy, 26(3), 376-388. https://doi.org/10.1080/13563467.2020.1766432</p>
-        <p>Langley, P., & Leyshon, A. (2023). FinTech platform regulation: Regulating with/against platforms in the United Kingdom (UK) and China. Cambridge Journal of Regions, Economy and Society, 16(2), 257-268. https://doi.org/10.1093/cjres/rsad005</p>
-        <p>Sun, F., & Whittington, J. (2023). The challenge for cities of governing spatial data privacy. In B. M. Frischmann, M. J. Madison, & M. R. Sanfilippo (Eds.), Governing Smart Cities as Knowledge Commons (pp. 29-57). Cambridge University Press. https://doi.org/10.1017/9781108938532.004</p>
-        <p>Lnenicka, M., Hervert, P., & Horak, O. (2024). Understanding big data and data protection measures in smart city strategies: An analysis of 28 cities. Urban Governance, 4(4), 255-273. https://doi.org/10.1016/j.ugj.2024.12.008</p>
-        <p>Avraam, D., Wilson, R., Butters, O., Burton, T., Nicolaides, C., Jones, E., Boyd, A., & Burton, P. (2021). Privacy preserving data visualizations. EPJ Data Science (European Physical Journal Data Science), 10, 2. https://doi.org/10.1140/epjds/s13688-020-00257-4</p>
-        <p>Star, S. L. (1999). The ethnography of infrastructure. American Behavioral Scientist. https://doi.org/10.1177/00027649921955326</p>
-        <p>Larkin, B. (2013). The politics and poetics of infrastructure. Annual Review of Anthropology. https://doi.org/10.1146/annurev-anthro-092412-155522</p>
-        <p>Maurer, B. (2012). Mobile money: Communication, consumption and change in the payments space. Journal of Development Studies. https://doi.org/10.1080/00220388.2011.621944</p>
-        <p>Kitchin, R. (2014). The real-time city? Big data and smart urbanism. GeoJournal. https://doi.org/10.1007/s10708-013-9516-8</p>
-        <p>Kitchin, R., Lauriault, T. P., & McArdle, G. (2015). Knowing and governing cities through urban indicators and dashboards. Regional Studies, Regional Science. https://doi.org/10.1080/21681376.2014.983149</p>
-        <p>van Dijck, J., Poell, T., & de Waal, M. (2018). The Platform Society. Oxford University Press. https://doi.org/10.1093/oso/9780190889760.001.0001</p>
-        <p>Aalbers, M. B. (2017). The variegated financialization of housing. International Journal of Urban and Regional Research. https://doi.org/10.1111/1468-2427.12522</p>
-      </div>
-    </section>
+        <p class="download-note">
+          <span class="lang-fr">Un premier échange peut partir d’un périmètre limité : géographies d’intérêt, période, niveau d’agrégation, variables disponibles et contraintes de confidentialité.</span>
+          <span class="lang-en">A first exchange can begin with a limited scope: geographies of interest, time period, aggregation level, available variables, and confidentiality constraints.</span>
+        </p>
+      </section>
+    </div>
   </main>
+
+  <script>
+    (function () {
+      document.documentElement.lang = document.body.getAttribute("data-lang") || "en";
+
+      var kicker = document.querySelector(".hero-kicker");
+      var topbarKicker = document.querySelector(".topbar-kicker");
+      var documentsPanel = document.getElementById("documents");
+
+      if (!kicker || !topbarKicker || !documentsPanel) {
+        return;
+      }
+
+      function updateKicker() {
+        topbarKicker.classList.remove("is-visible");
+        topbarKicker.style.left = "";
+        topbarKicker.style.top = "";
+
+        if (window.innerWidth <= 860) {
+          return;
+        }
+
+        var naturalRect = kicker.getBoundingClientRect();
+        var nav = document.querySelector(".topbar .nav");
+        if (!nav) {
+          return;
+        }
+        var navRect = nav.getBoundingClientRect();
+        var start = naturalRect.top + window.scrollY - 18;
+        var stop = documentsPanel.getBoundingClientRect().top + window.scrollY - 140;
+        var shouldStick = window.scrollY > start && window.scrollY < stop;
+
+        if (shouldStick) {
+          var gap = 18;
+          var left = Math.max(16, Math.round(navRect.left - topbarKicker.offsetWidth - gap));
+          var top = Math.round(navRect.top + ((navRect.height - topbarKicker.offsetHeight) / 2));
+          topbarKicker.style.left = left + "px";
+          topbarKicker.style.top = top + "px";
+          topbarKicker.classList.add("is-visible");
+        }
+      }
+
+      window.addEventListener("scroll", updateKicker, { passive: true });
+      window.addEventListener("resize", updateKicker);
+      updateKicker();
+    })();
+  </script>
+  <script src="assets/js/lang-toggle.js"></script>
 </body>
 </html>

@@ -1,0 +1,127 @@
+.lang-en {
+  display: none;
+}
+
+body[data-lang="en"] .lang-fr {
+  display: none;
+}
+
+body[data-lang="en"] .lang-en {
+  display: inline;
+}
+
+body[data-lang="fr"] .lang-fr {
+  display: inline;
+}
+
+body[data-lang="fr"] .lang-en {
+  display: none;
+}
+
+body[data-lang="en"] .lang-en.block,
+body[data-lang="fr"] .lang-fr.block {
+  display: block;
+}
+
+body[data-lang="en"] .lang-fr.block,
+body[data-lang="fr"] .lang-en.block {
+  display: none;
+}
+
+.topbar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  pointer-events: auto;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-toggle button {
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  border-color: #8c1515;
+  color: #8c1515;
+}
+
+.topbar .nav,
+.topbar .lang-toggle {
+  pointer-events: auto;
+}
+
+.site-header .header-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 18px;
+  align-items: start;
+}
+
+.site-header .header-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.site-header .header-nav a {
+  color: #242424;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.site-header .header-nav a:hover,
+.site-header .header-nav a.active {
+  color: #8c1515;
+}
+
+.site-header .lang-toggle button {
+  background: #fff;
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    justify-content: center;
+  }
+
+  .topbar-inner {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header .header-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header .header-controls {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 460px) {
+  .topbar-inner {
+    align-items: center;
+  }
+
+  .lang-toggle {
+    justify-content: center;
+  }
+}

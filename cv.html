@@ -11,13 +11,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/lang-toggle.css" />
 
   <style>
     :root{
       --ink:#111;
-      --muted: #b7b7b7;
+      --muted: #6f6f6f;
       --line:#e6e6e6;
-      --accent: #bc4749; /* cinnabar */
+      --accent: #8c1515;
       --bg:#fff;
       --mono:"Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       --sans:"Lato", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -63,14 +64,14 @@
       pointer-events:auto;
     }
     .topbar a{
-      color:#b8b8b8;
+      color:#242424;
       text-decoration:none;
       padding:4px 6px;
       border-radius:6px;
       transition: color .15s ease, transform .15s ease;
     }
-    .topbar a:hover{ color:#E34234; }
-    .topbar a.current{ color:#E34234; border-bottom:2px solid #E34234; }
+    .topbar a:hover{ color:var(--accent); }
+    .topbar a.current{ color:var(--accent); border-bottom:2px solid var(--accent); }
 
     .container{
       max-width: var(--w);
@@ -193,17 +194,23 @@
   </style>
 </head>
 
-<body>
+<body data-lang="en" data-title-fr="CV | Pacôme Trousselle" data-title-en="CV | Pacome Trousselle">
   <canvas id="bg" aria-hidden="true"></canvas>
 
   <header class="topbar">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="bio.html">Bio</a>
-      <a href="cv.html">CV</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="topbar-inner">
+      <nav class="nav" aria-label="Primary" data-label-fr="Navigation principale" data-label-en="Primary">
+        <a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+        <a href="research.html"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+        <a href="bio.html"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+        <a href="cv.html" class="current active"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+        <a href="projects.html"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+      </nav>
+      <div class="lang-toggle" aria-label="Language switcher" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+        <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
   </header>
 
   <div class="container">
@@ -212,25 +219,27 @@
     <header class="cv-head" id="cv-head">
       <div>
         <h1>PACÔME TROUSSELLE</h1>
-        <div class="meta">Urban economic geography researcher · transaction flows · urban dynamics · geofinance</div>
+        <div class="meta"><span class="lang-fr">Chercheur en géographie économique urbaine · flux transactionnels · dynamiques urbaines · géofinance</span><span class="lang-en">Urban economic geography researcher · transaction flows · urban dynamics · geofinance</span></div>
       </div>
 
       <div class="contact" id="cv-contact">
-        <div>Paris, France</div>
+        <div><span class="lang-fr">Paris, France</span><span class="lang-en">Paris, France</span></div>
 
         <div><a href="mailto:troussellepacome@gmail.com">troussellepacome@gmail.com</a></div>
 
-        <div class="meta"><span class="pill">French C2</span><span class="pill">English C1</span></div>
+        <div class="meta"><span class="pill"><span class="lang-fr">Français C2</span><span class="lang-en">French C2</span></span><span class="pill"><span class="lang-fr">Anglais C1</span><span class="lang-en">English C1</span></span></div>
       </div>
     </header>
 
     <section class="section">
-      <h2>Profile</h2>
+      <h2><span class="lang-fr">Profil</span><span class="lang-en">Profile</span></h2>
       <div>
         <div class="entry">
           <p style="margin:0">
-            PhD research project (2026): City-Scale Transaction Flows and Urban Dynamics.
-            Focus on value circulation, economic centrality dynamics, and links with real estate valorization and the production of urban space.
+            <span class="lang-fr">Projet de thèse (2026) : flux transactionnels à l’échelle urbaine et dynamiques urbaines.
+            Travail centré sur la circulation de la valeur, les dynamiques de centralité économique, et les liens avec la valorisation immobilière et la production de l’espace urbain.</span>
+            <span class="lang-en">PhD research project (2026): City-Scale Transaction Flows and Urban Dynamics.
+            Focus on value circulation, economic centrality dynamics, and links with real estate valorization and the production of urban space.</span>
           </p>
           <div class="meta" style="margin-top:12px">
           </div>
@@ -240,15 +249,15 @@
 
 
     <section class="section">
-      <h2>Professional experience</h2>
+      <h2><span class="lang-fr">Expérience professionnelle</span><span class="lang-en">Professional experience</span></h2>
       <div>
         <div class="entry">
           <h3>Institute of Technology &amp; Society of Rio (Brazil)</h3>
           <div class="row">
             <div class="when">2025</div>
             <div class="what">
-              <div>Research Fellow</div>
-              <div class="meta">Exploratory analysis of links between local economic centralities, digital infrastructures and territorial transformations; analytical notes and data structuring; international fieldwork.</div>
+              <div><span class="lang-fr">Research Fellow</span><span class="lang-en">Research Fellow</span></div>
+              <div class="meta"><span class="lang-fr">Analyse exploratoire des liens entre centralités économiques locales, infrastructures numériques et transformations territoriales ; notes analytiques et structuration de données ; terrain international.</span><span class="lang-en">Exploratory analysis of links between local economic centralities, digital infrastructures and territorial transformations; analytical notes and data structuring; international fieldwork.</span></div>
             </div>
           </div>
         </div>
@@ -258,8 +267,8 @@
           <div class="row">
             <div class="when">2023</div>
             <div class="what">
-              <div>Laboratory Technician</div>
-              <div class="meta">Collection and processing of geospatial data (GPS, LiDAR); production of cartographic indicators under scientific quality protocols.</div>
+              <div><span class="lang-fr">Technicien de laboratoire</span><span class="lang-en">Laboratory Technician</span></div>
+              <div class="meta"><span class="lang-fr">Collecte et traitement de données géospatiales (GPS, LiDAR) ; production d’indicateurs cartographiques sous protocoles de qualité scientifique.</span><span class="lang-en">Collection and processing of geospatial data (GPS, LiDAR); production of cartographic indicators under scientific quality protocols.</span></div>
             </div>
           </div>
         </div>
@@ -267,15 +276,15 @@
     </section>
 
     <section class="section">
-      <h2>Education</h2>
+      <h2><span class="lang-fr">Formation</span><span class="lang-en">Education</span></h2>
       <div>
         <div class="entry">
           <h3>Sorbonne Université, Paris</h3>
           <div class="row">
             <div class="when">2023–2025</div>
             <div class="what">
-              <div>Master’s Degree (MSc), GAED GéoSuds: Societies, Territories and Development, High Honours</div>
-              <div class="meta">Specialization: economic geography, urban data, digital platforms, territorial inequalities, public policy.</div>
+              <div><span class="lang-fr">Master GAED GéoSuds : sociétés, territoires et développement, mention bien</span><span class="lang-en">Master’s Degree (MSc), GAED GéoSuds: Societies, Territories and Development, High Honours</span></div>
+              <div class="meta"><span class="lang-fr">Spécialisation : géographie économique, données urbaines, plateformes numériques, inégalités territoriales, politiques publiques.</span><span class="lang-en">Specialization: economic geography, urban data, digital platforms, territorial inequalities, public policy.</span></div>
             </div>
           </div>
         </div>
@@ -285,8 +294,8 @@
           <div class="row">
             <div class="when">2020–2023</div>
             <div class="what">
-              <div>Bachelor’s Degree in Geography &amp; Planning, High Honours</div>
-              <div class="meta">Urban studies, spatial planning, applied statistics, GIS, research methodology.</div>
+              <div><span class="lang-fr">Licence de géographie et aménagement, mention bien</span><span class="lang-en">Bachelor’s Degree in Geography &amp; Planning, High Honours</span></div>
+              <div class="meta"><span class="lang-fr">Études urbaines, aménagement, statistiques appliquées, SIG, méthodologie de la recherche.</span><span class="lang-en">Urban studies, spatial planning, applied statistics, GIS, research methodology.</span></div>
             </div>
           </div>
         </div>
@@ -295,7 +304,7 @@
 
 
     <section class="section">
-      <h2>Publications</h2>
+      <h2><span class="lang-fr">Publications</span><span class="lang-en">Publications</span></h2>
       <div>
         <div class="entry">
           <h3>From Cash to Code: Governing by Transactions in the Urban Economy of Rio de Janeiro</h3>
@@ -303,14 +312,14 @@
             <div class="when">2025</div>
             <div class="what">
               <div>ITS Rio</div>
-              <div class="meta">Exploratory analysis of links between local economic centralities, digital infrastructures and territorial transformations.</div>
+              <div class="meta"><span class="lang-fr">Analyse exploratoire des liens entre centralités économiques locales, infrastructures numériques et transformations territoriales.</span><span class="lang-en">Exploratory analysis of links between local economic centralities, digital infrastructures and territorial transformations.</span></div>
             </div>
           </div>
         </div>
-    <footer style="margin-top:18px" class="meta">
-    </footer>
+      </div>
+    </section>
   </div>
 
-
+  <script src="assets/js/lang-toggle.js"></script>
 </body>
 </html>

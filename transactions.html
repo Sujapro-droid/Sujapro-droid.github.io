@@ -12,59 +12,66 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/transactions.css" />
+  <link rel="stylesheet" href="assets/css/lang-toggle.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin="anonymous">
 </head>
-<body>
+<body data-lang="en" data-title-fr="Transactions commerciales | Pacôme Trousselle" data-title-en="Commercial Transactions | Pacome Trousselle">
   <header class="site-header">
     <div class="header-wrap">
       <a class="logo" href="index.html" aria-label="Home">
         <span class="logo-brand">brickz</span>
-        <span class="logo-tag">true property prices</span>
+        <span class="logo-tag"><span class="lang-fr">prix immobiliers réels</span><span class="lang-en">true property prices</span></span>
       </a>
-      <nav class="header-nav" aria-label="Primary">
-        <a href="transactions.html" class="active">Commercial</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="bio.html">Bio</a>
-        <a href="cv.html">CV</a>
-      </nav>
+      <div class="header-controls">
+        <nav class="header-nav" aria-label="Primary" data-label-fr="Navigation principale" data-label-en="Primary">
+          <a href="transactions.html" class="active"><span class="lang-fr">Commercial</span><span class="lang-en">Commercial</span></a>
+          <a href="projects.html"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+          <a href="research.html"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+          <a href="bio.html"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+          <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+        </nav>
+        <div class="lang-toggle" aria-label="Language switcher" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+          <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="page">
     <section class="hero">
       <div>
-        <h1>Commercial Transactions</h1>
-        <p class="subtle" id="summaryText">Loading dataset...</p>
+        <h1><span class="lang-fr">Transactions commerciales</span><span class="lang-en">Commercial Transactions</span></h1>
+        <p class="subtle" id="summaryText"><span class="lang-fr">Chargement des données...</span><span class="lang-en">Loading dataset...</span></p>
       </div>
       <div class="summary">
-        <div><span id="statP25Psm">--</span> 25th / m²</div>
-        <div><span id="statMedianPsm">--</span> Median / m²</div>
-        <div><span id="statP75Psm">--</span> 75th / m²</div>
-        <div><span id="statP25Price">--</span> 25th Price</div>
-        <div><span id="statMedianPrice">--</span> Median Price</div>
-        <div><span id="statP75Price">--</span> 75th Price</div>
+        <div><span id="statP25Psm">--</span> <span class="lang-fr">25e / m²</span><span class="lang-en">25th / m²</span></div>
+        <div><span id="statMedianPsm">--</span> <span class="lang-fr">Médiane / m²</span><span class="lang-en">Median / m²</span></div>
+        <div><span id="statP75Psm">--</span> <span class="lang-fr">75e / m²</span><span class="lang-en">75th / m²</span></div>
+        <div><span id="statP25Price">--</span> <span class="lang-fr">25e prix</span><span class="lang-en">25th Price</span></div>
+        <div><span id="statMedianPrice">--</span> <span class="lang-fr">Prix médian</span><span class="lang-en">Median Price</span></div>
+        <div><span id="statP75Price">--</span> <span class="lang-fr">75e prix</span><span class="lang-en">75th Price</span></div>
       </div>
     </section>
 
     <section class="map-wrap" aria-label="Maps">
       <div class="map-toggle" role="tablist" aria-label="Map metric">
-        <button class="toggle-btn active" type="button" data-target="mapPriceCard">Median Price</button>
-        <button class="toggle-btn" type="button" data-target="mapPsmCard">Median Price / m²</button>
-        <button class="toggle-btn" type="button" data-target="mapCountCard">Transaction Volume</button>
+        <button class="toggle-btn active" type="button" data-target="mapPriceCard"><span class="lang-fr">Prix médian</span><span class="lang-en">Median Price</span></button>
+        <button class="toggle-btn" type="button" data-target="mapPsmCard"><span class="lang-fr">Prix médian / m²</span><span class="lang-en">Median Price / m²</span></button>
+        <button class="toggle-btn" type="button" data-target="mapCountCard"><span class="lang-fr">Volume de transactions</span><span class="lang-en">Transaction Volume</span></button>
       </div>
       <div class="map-card active" id="mapPriceCard">
-        <h2>Median Price (RM)</h2>
+        <h2><span class="lang-fr">Prix médian (RM)</span><span class="lang-en">Median Price (RM)</span></h2>
         <div id="mapPrice" class="map"></div>
       </div>
       <div class="map-card" id="mapPsmCard">
-        <h2>Median Price / m² (RM)</h2>
+        <h2><span class="lang-fr">Prix médian / m² (RM)</span><span class="lang-en">Median Price / m² (RM)</span></h2>
         <div id="mapPsm" class="map"></div>
       </div>
       <div class="map-card" id="mapCountCard">
-        <h2>Transaction Volume</h2>
+        <h2><span class="lang-fr">Volume de transactions</span><span class="lang-en">Transaction Volume</span></h2>
         <div id="mapCount" class="map"></div>
       </div>
     </section>
@@ -72,53 +79,53 @@
     <section class="filters" aria-label="Filters">
       <div class="filter-row">
         <label class="filter">
-          <span>Search</span>
-          <input id="q" type="text" placeholder="Street, area, project" />
+          <span><span class="lang-fr">Recherche</span><span class="lang-en">Search</span></span>
+          <input id="q" type="text" placeholder="Street, area, project" data-placeholder-fr="Rue, zone, projet" data-placeholder-en="Street, area, project" />
         </label>
         <label class="filter">
-          <span>State</span>
+          <span><span class="lang-fr">État</span><span class="lang-en">State</span></span>
           <select id="state">
-            <option value="">All States</option>
+            <option value="" data-fr="Tous les États" data-en="All States">All States</option>
           </select>
         </label>
         <label class="filter">
-          <span>Area</span>
+          <span><span class="lang-fr">Zone</span><span class="lang-en">Area</span></span>
           <select id="area">
-            <option value="">All Areas</option>
+            <option value="" data-fr="Toutes les zones" data-en="All Areas">All Areas</option>
           </select>
         </label>
         <label class="filter">
-          <span>Type</span>
+          <span><span class="lang-fr">Type</span><span class="lang-en">Type</span></span>
           <select id="type">
-            <option value="">All Types</option>
+            <option value="" data-fr="Tous les types" data-en="All Types">All Types</option>
           </select>
         </label>
         <label class="filter">
-          <span>Tenure</span>
+          <span><span class="lang-fr">Tenure</span><span class="lang-en">Tenure</span></span>
           <select id="tenure">
-            <option value="">All Tenure</option>
+            <option value="" data-fr="Tous les types de tenure" data-en="All Tenure">All Tenure</option>
           </select>
         </label>
         <label class="filter">
-          <span>Price Range</span>
+          <span><span class="lang-fr">Fourchette de prix</span><span class="lang-en">Price Range</span></span>
           <select id="price">
-            <option value="">All Prices</option>
-            <option value="0-500000">Under RM 500k</option>
-            <option value="500000-1000000">RM 500k - RM 1m</option>
-            <option value="1000000-2000000">RM 1m - RM 2m</option>
-            <option value="2000000-99999999">Above RM 2m</option>
+            <option value="" data-fr="Tous les prix" data-en="All Prices">All Prices</option>
+            <option value="0-500000" data-fr="Moins de RM 500k" data-en="Under RM 500k">Under RM 500k</option>
+            <option value="500000-1000000" data-fr="RM 500k - RM 1m" data-en="RM 500k - RM 1m">RM 500k - RM 1m</option>
+            <option value="1000000-2000000" data-fr="RM 1m - RM 2m" data-en="RM 1m - RM 2m">RM 1m - RM 2m</option>
+            <option value="2000000-99999999" data-fr="Au-dessus de RM 2m" data-en="Above RM 2m">Above RM 2m</option>
           </select>
         </label>
         <label class="filter">
-          <span>Period</span>
+          <span><span class="lang-fr">Période</span><span class="lang-en">Period</span></span>
           <select id="period">
-            <option value="">All Periods</option>
+            <option value="" data-fr="Toutes les périodes" data-en="All Periods">All Periods</option>
           </select>
         </label>
       </div>
       <div class="filter-actions">
-        <button id="applyBtn" class="btn primary" type="button">Filter</button>
-        <button id="clearBtn" class="btn" type="button">Clear</button>
+        <button id="applyBtn" class="btn primary" type="button"><span class="lang-fr">Filtrer</span><span class="lang-en">Filter</span></button>
+        <button id="clearBtn" class="btn" type="button"><span class="lang-fr">Réinitialiser</span><span class="lang-en">Clear</span></button>
         <div class="result-count" id="resultCount"></div>
       </div>
     </section>
@@ -127,15 +134,15 @@
       <table class="transactions">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Project / Street</th>
-            <th>Area</th>
-            <th>State</th>
-            <th>Type</th>
-            <th>Tenure</th>
-            <th class="num">Size (m²)</th>
-            <th class="num">Price (RM)</th>
-            <th class="num">Price / m²</th>
+            <th><span class="lang-fr">Date</span><span class="lang-en">Date</span></th>
+            <th><span class="lang-fr">Projet / Rue</span><span class="lang-en">Project / Street</span></th>
+            <th><span class="lang-fr">Zone</span><span class="lang-en">Area</span></th>
+            <th><span class="lang-fr">État</span><span class="lang-en">State</span></th>
+            <th><span class="lang-fr">Type</span><span class="lang-en">Type</span></th>
+            <th><span class="lang-fr">Tenure</span><span class="lang-en">Tenure</span></th>
+            <th class="num"><span class="lang-fr">Surface (m²)</span><span class="lang-en">Size (m²)</span></th>
+            <th class="num"><span class="lang-fr">Prix (RM)</span><span class="lang-en">Price (RM)</span></th>
+            <th class="num"><span class="lang-fr">Prix / m²</span><span class="lang-en">Price / m²</span></th>
           </tr>
         </thead>
         <tbody id="rows"></tbody>
@@ -144,12 +151,13 @@
   </main>
 
   <footer class="site-footer">
-    <small>&copy; 2026 Sample Transactions. All Rights Reserved.</small>
+    <small><span class="lang-fr">&copy; 2026 Échantillon de transactions. Tous droits réservés.</span><span class="lang-en">&copy; 2026 Sample Transactions. All Rights Reserved.</span></small>
   </footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
           crossorigin="anonymous"></script>
   <script src="assets/js/transactions.js"></script>
+  <script src="assets/js/lang-toggle.js"></script>
 </body>
 </html>

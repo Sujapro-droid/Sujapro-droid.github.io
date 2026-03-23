@@ -11,16 +11,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/bio-research.css" />
+  <link rel="stylesheet" href="assets/css/lang-toggle.css" />
 </head>
-<body>
+<body data-lang="en" data-title-fr="Bio | Pacôme Trousselle" data-title-en="Bio | Pacôme Trousselle">
   <header class="topbar">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="bio.html">Bio</a>
-      <a href="cv.html">CV</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="topbar-inner">
+      <nav class="nav" aria-label="Primary" data-label-fr="Navigation principale" data-label-en="Primary">
+        <a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+        <a href="research.html"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+        <a href="bio.html" class="active"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+        <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+        <a href="projects.html"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+      </nav>
+      <div class="lang-toggle" aria-label="Language switcher" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+        <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
   </header>
 
   <main class="main">
@@ -30,16 +37,26 @@
           <img class="bio-portrait" src="assets/img/bio-portrait.png" alt="Pacôme Trousselle" draggable="false" />
         </div>
         <div class="bio-text">
-          <h5 class="bio-heading">One sentence bio</h5>
-          <p class="bio-placeholder">Pacôme Trousselle is an urban economic geography researcher examining how digital platforms reshape economic flows and territorial dynamics through spatial and data-driven analysis.</p>
+          <h5 class="bio-heading"><span class="lang-fr">Bio en une phrase</span><span class="lang-en">One sentence bio</span></h5>
+          <p class="bio-placeholder">
+            <span class="lang-fr">Pacôme Trousselle est chercheur en géographie économique urbaine et analyse comment les plateformes et infrastructures numériques reconfigurent les flux économiques et les dynamiques territoriales à partir d’approches spatiales et fondées sur les données.</span>
+            <span class="lang-en">Pacôme Trousselle is an urban economic geography researcher examining how digital platforms reshape economic flows and territorial dynamics through spatial and data-driven analysis.</span>
+          </p>
 
-          <h5 class="bio-heading">Short bio</h5>
-          <p>Pacôme Trousselle is a researcher in urban economic geography, specializing in the analysis of economic flows and territorial transformations associated with digital platforms. Trained in geography and spatial planning at Sorbonne University in Paris, where he completed the Master GAED GéoSuds program, he was a Research Fellow at the Institute of Technology and Society of Rio. There, he examined the dynamics of value circulation and its spatial distribution within the city.</p>
-          <p>His methodological approach combines spatial analysis using geographic information systems with the structuring of multisource datasets within an interdisciplinary research environment, in support of his doctoral work. He seeks to leverage aggregated money flow data and large scale data infrastructures to develop auditable territorial indicators that contribute to scientific knowledge production and serve as strategic tools for public authorities, financial institutions, and international organizations.</p>
+          <h5 class="bio-heading"><span class="lang-fr">Bio courte</span><span class="lang-en">Short bio</span></h5>
+          <p>
+            <span class="lang-fr">Pacôme Trousselle est chercheur en géographie économique urbaine, spécialisé dans l’analyse des flux économiques et des transformations territoriales associées aux plateformes numériques. Formé en géographie et aménagement à Sorbonne Université à Paris, où il a suivi le master GAED GéoSuds, il a été Research Fellow à l’Institute of Technology and Society de Rio. Il y a étudié les dynamiques de circulation de la valeur et leur distribution spatiale dans la ville.</span>
+            <span class="lang-en">Pacôme Trousselle is a researcher in urban economic geography, specializing in the analysis of economic flows and territorial transformations associated with digital platforms. Trained in geography and spatial planning at Sorbonne University in Paris, where he completed the Master GAED GéoSuds program, he was a Research Fellow at the Institute of Technology and Society of Rio. There, he examined the dynamics of value circulation and its spatial distribution within the city.</span>
+          </p>
+          <p>
+            <span class="lang-fr">Son approche méthodologique combine l’analyse spatiale par systèmes d’information géographique avec la structuration de jeux de données multi-sources dans un environnement de recherche interdisciplinaire, au service de son travail doctoral. Il cherche à mobiliser des données agrégées de circulation monétaire et de grandes infrastructures de données afin de produire des indicateurs territoriaux auditables, utiles à la connaissance scientifique comme à l’action d’autorités publiques, d’institutions financières et d’organisations internationales.</span>
+            <span class="lang-en">His methodological approach combines spatial analysis using geographic information systems with the structuring of multisource datasets within an interdisciplinary research environment, in support of his doctoral work. He seeks to leverage aggregated money flow data and large scale data infrastructures to develop auditable territorial indicators that contribute to scientific knowledge production and serve as strategic tools for public authorities, financial institutions, and international organizations.</span>
+          </p>
         </div>
       </div>
 
     </section>
   </main>
+  <script src="assets/js/lang-toggle.js"></script>
 </body>
 </html>

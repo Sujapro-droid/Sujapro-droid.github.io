@@ -23,6 +23,58 @@ const els = {
   statP75Price: document.getElementById("statP75Price")
 };
 
+const i18n = {
+  en: {
+    noData: "No data",
+    transactions: "transactions",
+    results: "results",
+    noDataAvailable: "No data available.",
+    summary: (count, first, last, medianPrice, medianPsm) => `${count.toLocaleString("en-MY")} transactions from ${first || "--"} to ${last || "--"}. Median price ${medianPrice} (${medianPsm}/m2).`,
+    labels: {
+      date: "Date",
+      project: "Project / Street",
+      area: "Area",
+      state: "State",
+      type: "Type",
+      tenure: "Tenure",
+      size: "Size (m2)",
+      price: "Price (RM)",
+      psm: "Price / m2"
+    }
+  },
+  fr: {
+    noData: "Pas de données",
+    transactions: "transactions",
+    results: "résultats",
+    noDataAvailable: "Aucune donnée disponible.",
+    summary: (count, first, last, medianPrice, medianPsm) => `${count.toLocaleString("fr-FR")} transactions de ${first || "--"} à ${last || "--"}. Prix médian ${medianPrice} (${medianPsm}/m2).`,
+    labels: {
+      date: "Date",
+      project: "Projet / Rue",
+      area: "Zone",
+      state: "État",
+      type: "Type",
+      tenure: "Tenure",
+      size: "Surface (m2)",
+      price: "Prix (RM)",
+      psm: "Prix / m2"
+    }
+  }
+};
+
+function currentLang() {
+  return document.body.getAttribute("data-lang") === "fr" ? "fr" : "en";
+}
+
+function updateStaticInputs() {
+  document.querySelectorAll("option[data-fr][data-en]").forEach(option => {
+    option.textContent = option.getAttribute("data-" + currentLang());
+  });
+  document.querySelectorAll("[data-placeholder-fr][data-placeholder-en]").forEach(input => {
+    input.setAttribute("placeholder", input.getAttribute("data-placeholder-" + currentLang()));
+  });
+}
+
 const monthIndex = {
   january: "01",
   february: "02",
@@ -131,23 +183,24 @@ function buildRow(row){
 
 function renderRows(rows){
   els.rows.innerHTML = "";
+  const labels = i18n[currentLang()].labels;
   rows.forEach(r => {
     const tr = document.createElement("tr");
     const pricePsm = r.size ? Math.round(r.price / r.size) : null;
     tr.innerHTML = `
-      <td data-label="Date">${r.dateLabel || r.date || "--"}</td>
-      <td data-label="Project / Street">${r.project}</td>
-      <td data-label="Area">${r.area}</td>
-      <td data-label="State">${r.state}</td>
-      <td data-label="Type">${r.type}</td>
-      <td data-label="Tenure">${r.tenure}</td>
-      <td data-label="Size (m2)" class="num">${r.size ? formatMoney(Math.round(r.size)) : "--"}</td>
-      <td data-label="Price (RM)" class="num">${r.price ? formatMoney(Math.round(r.price)) : "--"}</td>
-      <td data-label="Price / m2" class="num">${pricePsm ? formatMoney(pricePsm) : "--"}</td>
+      <td data-label="${labels.date}">${r.dateLabel || r.date || "--"}</td>
+      <td data-label="${labels.project}">${r.project}</td>
+      <td data-label="${labels.area}">${r.area}</td>
+      <td data-label="${labels.state}">${r.state}</td>
+      <td data-label="${labels.type}">${r.type}</td>
+      <td data-label="${labels.tenure}">${r.tenure}</td>
+      <td data-label="${labels.size}" class="num">${r.size ? formatMoney(Math.round(r.size)) : "--"}</td>
+      <td data-label="${labels.price}" class="num">${r.price ? formatMoney(Math.round(r.price)) : "--"}</td>
+      <td data-label="${labels.psm}" class="num">${pricePsm ? formatMoney(pricePsm) : "--"}</td>
     `;
     els.rows.appendChild(tr);
   });
-  els.count.textContent = `${rows.length} results`;
+  els.count.textContent = `${rows.length} ${i18n[currentLang()].results}`;
 }
 
 function normalizeKey(value){
@@ -254,9 +307,9 @@ function renderChoropleth(mapId, statKey, formatFn){
       const name = feature.properties?.shapeName;
       const stat = stats.get(name);
       const value = stat ? stat[statKey] : null;
-      const label = value == null ? "No data" : formatFn(value);
+      const label = value == null ? i18n[currentLang()].noData : formatFn(value);
       const count = stat ? stat.count : 0;
-      layer.bindPopup(`<strong>${name}</strong><br>${label}<br>${count} transactions`);
+      layer.bindPopup(`<strong>${name}</strong><br>${label}<br>${count} ${i18n[currentLang()].transactions}`);
     }
   }).addTo(map);
 
@@ -316,7 +369,7 @@ function fillPeriodOptions(){
 
 function updateSummary(){
   if(!data.length){
-    els.summaryText.textContent = "No data available.";
+    els.summaryText.textContent = i18n[currentLang()].noDataAvailable;
     return;
   }
   const dates = data.map(d => d.date).filter(Boolean).sort();
@@ -331,7 +384,13 @@ function updateSummary(){
     return arr[idx];
   };
 
-  els.summaryText.textContent = `${data.length.toLocaleString("en-MY")} transactions from ${first || "--"} to ${last || "--"}. Median price ${formatCurrency(pick(prices, 0.5))} (${formatPsm(pick(psm, 0.5))}/m2).`;
+  els.summaryText.textContent = i18n[currentLang()].summary(
+    data.length,
+    first,
+    last,
+    formatCurrency(pick(prices, 0.5)),
+    formatPsm(pick(psm, 0.5))
+  );
   els.statP25Psm.textContent = formatPsm(pick(psm, 0.25));
   els.statMedianPsm.textContent = formatPsm(pick(psm, 0.5));
   els.statP75Psm.textContent = formatPsm(pick(psm, 0.75));
@@ -360,6 +419,7 @@ async function loadData(){
   fillSelect(els.type, uniqueValues("type"));
   fillSelect(els.tenure, uniqueValues("tenure"));
   fillPeriodOptions();
+  updateStaticInputs();
   updateSummary();
   renderRows(data);
   renderChoropleth("mapPrice", "medianPrice", value => formatCurrency(value));
@@ -394,4 +454,13 @@ els.q.addEventListener("input", applyFilters);
 
 initToggle();
 loadData();
+
+document.addEventListener("languagechange", () => {
+  updateStaticInputs();
+  updateSummary();
+  renderRows(data);
+  renderChoropleth("mapPrice", "medianPrice", value => formatCurrency(value));
+  renderChoropleth("mapPsm", "medianPsm", value => `${formatPsm(value)}/m2`);
+  renderChoropleth("mapCount", "count", value => `${formatMoney(Math.round(value))}`);
+});
 

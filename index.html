@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="assets/css/lang-toggle.css" />
 
   <!-- Optionnel mais recommandé : le canvas en fond -->
   <style>
@@ -26,36 +27,52 @@
   </style>
 </head>
 
-<body>
+<body data-lang="en" data-title-fr="Pacôme Trousselle" data-title-en="Pacôme Trousselle">
   <canvas id="bg" aria-hidden="true"></canvas>
 
   <header class="topbar">
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="bio.html">Bio</a>
-      <a href="cv.html">CV</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="topbar-inner">
+      <nav class="nav" aria-label="Primary" data-label-fr="Navigation principale" data-label-en="Primary">
+        <a href="index.html" class="active"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a>
+        <a href="research.html"><span class="lang-fr">Recherche</span><span class="lang-en">Research</span></a>
+        <a href="bio.html"><span class="lang-fr">Bio</span><span class="lang-en">Bio</span></a>
+        <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+        <a href="projects.html"><span class="lang-fr">Projets</span><span class="lang-en">Projects</span></a>
+      </nav>
+      <div class="lang-toggle" aria-label="Language switcher" data-label-fr="Sélecteur de langue" data-label-en="Language switcher">
+        <button type="button" data-set-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
   </header>
 
   <main class="main">
     <section class="hero" aria-label="Hero">
       <div class="title">
-        <h1>PACÔME  TROUSSELLE</h1>
-        <div class="subtitle">PhD research project : City-Scale Transaction Flows and Urban Dynamics</div>
+        <div class="title-row">
+          <figure class="home-portrait">
+            <img src="assets/img/bio-portrait.png" alt="Pacôme Trousselle" />
+          </figure>
+          <div class="title-copy">
+            <h1>PACÔME  TROUSSELLE</h1>
+            <div class="subtitle">
+              <span class="lang-fr">Projet de thèse : flux transactionnels à l’échelle urbaine et dynamiques urbaines</span>
+              <span class="lang-en">PhD research project: City-scale transaction flows and urban dynamics</span>
+            </div>
+            <div class="links">
+              <a href="mailto:troussellepacome@gmail.com"><span class="lang-fr">Email</span><span class="lang-en">Email</span></a>
+              <a href="https://www.linkedin.com/in/pac%C3%B4me-trousselle-271456271/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="cv.html"><span class="lang-fr">CV</span><span class="lang-en">CV</span></a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <aside class="links" aria-label="Links">
-        <a href="mailto:troussellepacome@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/pac%C3%B4me-trousselle-271456271/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="cv.html">CV</a>
-      </aside>
     </section>
   </main>
 
   <!-- p5.js -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
   <script src="assets/js/hero-waves.js"></script>
+  <script src="assets/js/lang-toggle.js"></script>
 </body>
 </html>

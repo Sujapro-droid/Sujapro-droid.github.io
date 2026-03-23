@@ -9,7 +9,7 @@
   const ctx = canvas.getContext('2d');
 
   const css = getComputedStyle(document.documentElement);
-  const accent = css.getPropertyValue('--accent').trim() || '#E34234';
+  const accent = css.getPropertyValue('--accent').trim() || '#8c1515';
 
   const state = {
     t: 0,
