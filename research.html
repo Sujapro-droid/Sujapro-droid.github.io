@@ -250,18 +250,27 @@
     }
 
     .hero-download {
-      display: inline-block;
-      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
       font-family: var(--mono);
       font-size: 0.82rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: var(--accent);
-      opacity: 0.88;
+      opacity: 0.96;
+      transition: border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
     }
 
     .hero-download:hover {
       opacity: 1;
+      border-color: var(--accent);
+      transform: translateY(-1px);
     }
 
     .scroll-cue {
@@ -711,6 +720,7 @@
             ordinary monetary circulation. By reading payments as territorial traces of value in motion,
             it becomes possible to observe where activity concentrates, how it redistributes itself, and which asymmetries run through urban space.</span>
           </p>
+          <a class="hero-download" href="#documents"><span class="lang-fr">Accéder aux documents détaillés</span><span class="lang-en">Access the detailed documents</span></a>
         </div>
 
         <aside class="hero-meta">
@@ -1046,9 +1056,6 @@
           <p>
             <span class="lang-fr">Si vous souhaitez aller plus loin, vous pouvez télécharger ci-dessous une version plus longue du projet, en français ou en anglais, selon le niveau de détail et le cadrage recherchés.</span>
             <span class="lang-en">If you would like to go further, you can download below a longer version of the project, in French or in English, depending on the level of detail and framing you need.</span>
-          </p>
-          <p>
-            <a class="hero-download" href="#documents"><span class="lang-fr">Accéder aux documents détaillés</span><span class="lang-en">Access the detailed documents</span></a>
           </p>
         </article>
 
